@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#af8d11",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#005300",
+                        "outline-variant": "#404941",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "tertiary": "#ffb59e",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#126e0c",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c0c9be",
+                        "primary-fixed-dim": "#82db6f",
+                        "primary-fixed": "#9df888",
+                        "on-background": "#e5e2e1",
+                        "outline": "#8a9389",
+                        "tertiary-fixed": "#ffdbd0",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#003a00",
+                        "on-tertiary-fixed-variant": "#852400",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "tertiary-container": "#7a2000",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed": "#241a00",
+                        "on-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "primary-container": "#004c00",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-container": "#342800",
+                        "surface": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-tint": "#82db6f",
+                        "on-tertiary": "#5e1700",
+                        "on-primary-container": "#69c057",
+                        "on-tertiary-container": "#ff8d69",
+                        "surface-bright": "#3a3939",
+                        "secondary": "#e9c349",
+                        "primary": "#82db6f",
+                        "on-primary-fixed": "#002200",
+                        "surface-variant": "#353534",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary": "#3c2f00",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #004c00 0%, #82db6f 100%);
+        }
+        .scrim-bottom {
+            background: linear-gradient(to top, rgba(14, 14, 14, 0.9) 0%, rgba(14, 14, 14, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <script src="main.js"></script>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-nav shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#82db6f] text-2xl">explore</span>
+<h1 class="text-2xl font-extrabold text-[#82db6f] tracking-tighter font-headline">Discover Ceylon</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+    <a class="text-gray-400 hover:text-white transition-colors font-headline font-bold tracking-tight" href="home.html">Home</a>
+    <a class="text-[#82db6f] border-b-2 border-[#82db6f] pb-1 font-headline font-bold tracking-tight" href="#">Explore</a>
+    <a class="text-gray-400 hover:text-white transition-colors font-headline font-bold tracking-tight" href="about-us.html">About Us</a>
+    <a class="text-gray-400 hover:text-white transition-colors font-headline font-bold tracking-tight" href="contact-us.html">Contact Us</a>
+    <a id="nav-admin-link" class="text-gray-400 hover:text-white transition-colors font-headline font-bold tracking-tight hidden" href="admin-login.html">Admin</a>
+</nav>
+<button class="gradient-button text-on-primary px-6 py-2.5 rounded-full font-headline font-bold tracking-tight hover:scale-[1.02] transition-all">
+                Book Now
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img id="province-hero-img" alt="Province Hero" class="w-full h-full object-cover scale-105" src="">
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    </div>
+    <div class="relative z-10 text-center px-8 max-w-5xl translate-y-12">
+        <span id="province-tagline" class="inline-block px-4 py-1.5 bg-primary/20 text-primary rounded-full text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm border border-primary/20"></span>
+        <h2 id="province-name" class="text-6xl md:text-8xl font-extrabold font-headline tracking-tighter mb-8 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent"></h2>
+        <p id="province-desc" class="text-on-surface-variant text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium mb-12"></p>
+    </div>
+</section>
+<script>
+    async function loadProvinceContent() {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id') || 1;
+            
+            const res = await fetch(`/api/provinces/${id}`);
+            if (!res.ok) throw new Error('Province not found');
+            const p = await res.json();
+            
+            if (p.error) {
+                window.location.href = 'home.html';
+                return;
+            }
+
+            // Hero
+            document.getElementById('province-hero-img').src = p.image_url || 'https://images.unsplash.com/photo-1586713791203-aa997868ec94?q=80&w=2070';
+            document.getElementById('province-tagline').textContent = p.tagline || 'The Emerald Heart';
+            document.getElementById('province-name').textContent = p.name;
+            document.getElementById('province-desc').textContent = p.description;
+
+            // Stats
+            document.getElementById('visit-days').textContent = p.visit_days || '---';
+            document.getElementById('weather-range').textContent = p.weather_range || '---';
+
+            // Spots
+            const spotsContainer = document.getElementById('spots-container');
+            spotsContainer.innerHTML = '';
+            if (!p.spots || p.spots.length === 0) {
+                spotsContainer.innerHTML = '<div class="col-span-full text-center py-12 bg-surface-container rounded-xl border border-white/5"><span class="material-symbols-outlined text-4xl text-white/20 mb-4">explore_off</span><p class="text-on-surface-variant italic">No curated spots available for this region yet.</p></div>';
+            } else {
+                p.spots.forEach((s, index) => {
+                    const card = document.createElement('div');
+                    card.className = `group cursor-pointer ${index % 2 !== 0 ? 'lg:mt-24' : ''}`;
+                    card.innerHTML = `
+                        <div class="relative aspect-[4/3] overflow-hidden rounded-xl mb-6">
+                            <img alt="${s.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${s.image_url || 'https://images.placeholder.com/800x600'}">
+                        </div>
+                        <h4 class="text-3xl font-headline font-bold mb-3 group-hover:text-primary transition-colors">${s.name}</h4>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">${s.description || ''}</p>
+                        <div class="flex gap-2">
+                            ${s.tags ? s.tags.split(',').map(tag => `<span class="px-3 py-1 bg-surface-container-highest rounded text-xs font-label text-on-surface-variant">${tag.trim()}</span>`).join('') : ''}
+                        </div>
+                    `;
+                    spotsContainer.appendChild(card);
+                });
+            }
+
+            // Hotels
+            const hotelsContainer = document.getElementById('hotels-container');
+            hotelsContainer.innerHTML = '';
+            if (!p.hotels || p.hotels.length === 0) {
+                hotelsContainer.innerHTML = '<div class="col-span-full text-center py-12 bg-surface-container rounded-xl border border-white/5"><span class="material-symbols-outlined text-4xl text-white/20 mb-4">hotel_class</span><p class="text-on-surface-variant italic">Luxury retreats coming soon to this region.</p></div>';
+            } else {
+                p.hotels.forEach(h => {
+                    const card = document.createElement('div');
+                    card.className = "bg-surface-container-low rounded-xl overflow-hidden hover:bg-surface-container-high transition-colors";
+                    card.innerHTML = `
+                        <div class="h-64 relative">
+                            <img alt="${h.name}" class="w-full h-full object-cover" src="${h.image_url || 'https://images.placeholder.com/600x400'}">
+                            <div class="absolute bottom-0 left-0 w-full p-4 scrim-bottom">
+                                <div class="flex items-center gap-1 text-secondary">
+                                    ${Array(h.stars || 4).fill('<span class="material-symbols-outlined text-sm" data-weight="fill">star</span>').join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h5 class="text-xl font-headline font-bold mb-2">${h.name}</h5>
+                            <p class="text-on-surface-variant text-sm leading-relaxed mb-6">${h.description || ''}</p>
+                            <button class="w-full py-3 rounded-lg border border-outline-variant/30 font-label text-sm font-bold hover:bg-primary hover:text-on-primary hover:border-primary transition-all">Explore Retreat</button>
+                        </div>
+                    `;
+                    hotelsContainer.appendChild(card);
+                });
+            }
+        } catch (e) {
+            console.error('Error loading province:', e);
+            document.querySelector('main').innerHTML = `<div class="pt-32 text-center"><p class="text-error font-bold">Failed to load region details. Please try again later.</p><button onclick="location.reload()" class="mt-4 px-6 py-2 bg-primary text-on-primary rounded-lg">Retry</button></div>`;
+        }
+    }
+
+    function selectThisPlace() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id') || '1';
+        const name = document.getElementById('province-name').textContent;
+        const imageUrl = document.getElementById('province-hero-img').src;
+        
+        let selectedRegions = JSON.parse(localStorage.getItem('selectedRegions')) || [];
+        
+        if (!selectedRegions.find(r => String(r.id) === String(id))) {
+            selectedRegions.push({ id, name, imageUrl });
+            localStorage.setItem('selectedRegions', JSON.stringify(selectedRegions));
+        }
+        
+        const btn = document.querySelector('button[onclick="selectThisPlace()"]');
+        if (btn) btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Beautiful place selected!`;
+        
+        setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 600);
+    }
+
+    loadProvinceContent();
+</script>
+<!-- Province Stats Bento -->
+<section class="px-8 py-12 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-center">
+<span class="text-secondary text-sm font-label uppercase tracking-widest mb-2">Travel Time</span>
+<p id="visit-days" class="text-4xl font-headline font-bold">5 - 7 Days</p>
+<p class="text-on-surface-variant mt-2">To organically explore the entirety of this province.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-xl col-span-1 md:col-span-2 flex items-center justify-between overflow-hidden group">
+<div class="z-10">
+<span class="text-primary text-sm font-label uppercase tracking-widest mb-2">Weather Profile</span>
+<p id="weather-range" class="text-3xl font-headline font-bold">18°C - 25°C</p>
+<p class="text-on-surface-variant mt-2">Cool highlands with occasional tropical mist.</p>
+</div>
+<div class="opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">thermostat</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tourist Spots Section -->
+<section class="px-8 py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h3 class="text-4xl font-headline font-extrabold tracking-tight mb-4">Curated Destinations</h3>
+<p class="text-on-surface-variant max-w-xl">Every landmark in the Central Province tells a story of ancient kings, colonial heritage, and untamed nature.</p>
+</div>
+<div class="h-[1px] flex-grow bg-outline-variant/20 mx-8 hidden md:block"></div>
+<div class="flex gap-4">
+<span class="text-primary font-bold text-5xl opacity-20 font-headline">01</span>
+</div>
+</div>
+<div id="spots-container" class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Dynamically Filled -->
+</div>
+</div>
+</section>
+<!-- Hotels Section -->
+<section class="px-8 py-24 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<span class="text-primary font-label uppercase tracking-widest text-sm mb-4 block">Refined Comfort</span>
+<h3 class="text-5xl font-headline font-extrabold tracking-tight">Concierge Selection: Stays</h3>
+</div>
+<div id="hotels-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Dynamically Filled -->
+</div>
+</div>
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full py-12 border-t border-[#404941]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<p class="text-lg font-bold text-[#82db6f] font-headline mb-2">Discover Ceylon</p>
+<p class="font-['Manrope'] text-sm tracking-wide text-gray-500">© 2024 Discover Ceylon Travel Concierge. All Rights Reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors font-['Manrope'] text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors font-['Manrope'] text-sm tracking-wide" href="#">Terms of Service</a>
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors font-['Manrope'] text-sm tracking-wide" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+
+<!-- Permanent Sticky Selection Bar -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[50] w-full max-w-sm px-4 md:px-0 pointer-events-none">
+    <button onclick="selectThisPlace()" class="w-full pointer-events-auto bg-primary text-on-primary font-headline font-bold py-4 rounded-full shadow-[0_10px_40px_rgba(130,219,111,0.5)] hover:-translate-y-1 transition-transform flex items-center justify-center gap-3 border border-white/20">
+        <span class="material-symbols-outlined">add_location_alt</span>
+        Select this beautiful place
+    </button>
+</div>
+
+<!-- Persistent WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group persistent-whatsapp" href="https://wa.me/" target="_blank">
+<div class="absolute -top-12 right-0 bg-surface-container-high text-on-surface text-xs font-bold py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
+            Chat with Concierge
+        </div>
+<svg fill="currentColor" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+<script>(async () => {
+    const adminLink = document.getElementById('nav-admin-link');
+    const adminRes = await fetch('/api/admin/me').catch(() => null);
+    if (adminRes && adminRes.ok) {
+        const admin = await adminRes.json();
+        adminLink.textContent = 'Dashboard';
+        adminLink.href = 'admin-dashboard.html';
+        adminLink.classList.remove('hidden');
+        // Add logout button if not present
+        if (!document.getElementById('nav-logout-btn')) {
+            const logoutBtn = document.createElement('span');
+            logoutBtn.id = 'nav-logout-btn';
+            logoutBtn.className = 'text-primary font-bold text-sm cursor-pointer ml-4';
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.onclick = async () => {
+                await fetch('/api/admin/logout', { method: 'POST' });
+                window.location.reload();
+            };
+            adminLink.parentNode.appendChild(logoutBtn);
+        }
+    } else {
+        adminLink.classList.remove('hidden');
+    }
+})();</script>
+</body></html>

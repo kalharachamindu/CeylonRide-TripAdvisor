@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#af8d11",
+                        "on-primary-fixed-variant": "#005300",
+                        "tertiary-container": "#7a2000",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed-dim": "#e9c349",
+                        "outline": "#8a9389",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#9df888",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "on-tertiary-container": "#ff8d69",
+                        "background": "#131313",
+                        "on-primary": "#003a00",
+                        "tertiary": "#ffb59e",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-fixed": "#241a00",
+                        "on-tertiary": "#5e1700",
+                        "on-tertiary-fixed-variant": "#852400",
+                        "on-surface-variant": "#c0c9be",
+                        "secondary": "#e9c349",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-tint": "#82db6f",
+                        "surface-container-highest": "#353534",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "primary-fixed-dim": "#82db6f",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-container": "#342800",
+                        "inverse-primary": "#126e0c",
+                        "on-primary-container": "#69c057",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#3c2f00",
+                        "inverse-on-surface": "#313030",
+                        "surface-dim": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "outline-variant": "#404941",
+                        "on-background": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "primary-container": "#004c00",
+                        "surface-variant": "#353534",
+                        "primary": "#82db6f",
+                        "tertiary-fixed": "#ffdbd0",
+                        "on-primary-fixed": "#002200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+        .whatsapp-gradient {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+    </style>
+  <script src="main.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md border-b border-white/5">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#82db6f] cursor-pointer hover:scale-95 duration-200" data-icon="menu">menu</span>
+<h1 class="text-xl font-bold tracking-widest text-[#82db6f] font-headline uppercase">DISCOVER CEYLON</h1>
+</div>
+<a class="text-white/70 hover:text-[#82db6f] transition-colors font-headline tracking-tighter font-bold uppercase text-sm" href="home.html">Home</a>
+<a class="text-white/70 hover:text-[#82db6f] transition-colors font-headline tracking-tighter font-bold uppercase text-sm" href="about-us.html">About Us</a>
+<a class="text-[#82db6f] transition-colors font-headline tracking-tighter font-bold uppercase text-sm" href="contact-us.html">Contact Us</a>
+<a id="nav-admin-link" class="text-white/70 hover:text-[#82db6f] transition-colors font-headline tracking-tighter font-bold uppercase text-sm hidden" href="admin-login.html">Admin</a>
+<span class="material-symbols-outlined text-[#82db6f] cursor-pointer hover:scale-95 duration-200" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-24 pb-32 min-h-screen relative overflow-hidden">
+<!-- Subtle Textured Background Hint -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+<img alt="Monochromatic dark aerial view of Sri Lankan tropical rainforest" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApJl7EBoz4V_uhgSu0WTDpnCiRR4zqzbjDUuO_fGKXd6auy--iKd0PTCYkNLtoBt_lEBV3lU5PHgB0lVm5RH_aq7fnmMmfMHhFTytrVKp-KBWn1yZGIprgT8aj6hsFkCU6zy4qZEFZleSdiU6RJnzsyr9p8axFKTk6mJbSdizVIrGYMBJC7x2Iap3cxHt-qFoSeWUULFatS5HlSoSloJMBPkrmCjfr2zKx0oM7vlp_izuwkeNzBV7zWeLqAuz5Ga0JeFE11oeUrVw"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="container mx-auto px-6 relative z-10">
+<!-- Hero Header Section -->
+<div class="max-w-4xl mb-12">
+<span class="font-label text-primary tracking-[0.2em] text-xs uppercase mb-4 block">Get in Touch</span>
+<h2 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-none">Your concierge to the <span class="text-primary italic">Pearl of the Ocean.</span></h2>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">Whether you require an airport transfer or a bespoke luxury tour across the island, our team is ready to curate your perfect journey.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Contact Form Section -->
+<div class="md:col-span-7 bg-surface-container-low rounded-xl p-8 md:p-12 border border-white/5">
+<h3 class="font-headline text-2xl font-bold mb-8">Send a Message</h3>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-white/50">Full Name</label>
+<input class="w-full bg-surface-variant border-none rounded-lg focus:ring-1 focus:ring-primary text-on-surface placeholder:text-white/20 px-4 py-4" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-white/50">Email Address</label>
+<input class="w-full bg-surface-variant border-none rounded-lg focus:ring-1 focus:ring-primary text-on-surface placeholder:text-white/20 px-4 py-4" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-white/50">Subject</label>
+<select class="w-full bg-surface-variant border-none rounded-lg focus:ring-1 focus:ring-primary text-on-surface px-4 py-4 appearance-none">
+<option>Luxury Tour Inquiry</option>
+<option>Airport Transfer Booking</option>
+<option>General Support</option>
+<option>Corporate Partnership</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-[10px] uppercase tracking-widest text-white/50">Message</label>
+<textarea id="contact-message" class="w-full bg-surface-variant border-none rounded-lg focus:ring-1 focus:ring-primary text-on-surface placeholder:text-white/20 px-4 py-4" placeholder="Tell us about your travel plans..." rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto bg-gradient-to-br from-primary-container to-primary text-on-primary font-bold px-10 py-5 rounded-xl hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 shadow-lg shadow-primary/10">
+<span>SEND INQUIRY</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</form>
+</div>
+<!-- Info Cards Column -->
+<div class="md:col-span-5 flex flex-col gap-6">
+<!-- Direct Channels (WhatsApp Priority) -->
+<div class="bg-surface-container-high rounded-xl p-8 border border-white/5">
+    <h3 class="font-headline text-xl font-bold mb-6 flex items-center gap-2 uppercase tracking-tighter">
+        <span class="material-symbols-outlined text-primary" data-weight="fill">chat_bubble</span>
+        Direct Channels
+    </h3>
+    <div class="space-y-6">
+        <a id="whatsapp-link" href="#" class="flex items-center gap-4 group p-3 hover:bg-surface-variant rounded-lg transition-colors">
+            <div class="w-10 h-10 bg-[#25D366]/10 text-[#25D366] rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">call</span>
+            </div>
+            <div>
+                <p class="text-[10px] uppercase tracking-widest text-white/30">WhatsApp</p>
+                <p id="whatsapp-text" class="text-sm font-bold">+94 000 000 000</p>
+            </div>
+        </a>
+        <a id="facebook-link" href="#" class="flex items-center gap-4 group p-3 hover:bg-surface-variant rounded-lg transition-colors">
+            <div class="w-10 h-10 bg-blue-500/10 text-blue-500 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">share</span>
+            </div>
+            <div>
+                <p class="text-[10px] uppercase tracking-widest text-white/30">Facebook</p>
+                <p id="facebook-text" class="text-sm font-bold">@DiscoverCeylon</p>
+            </div>
+        </a>
+        <a id="email-link" href="#" class="flex items-center gap-4 group p-3 hover:bg-surface-variant rounded-lg transition-colors">
+            <div class="w-10 h-10 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">mail</span>
+            </div>
+            <div>
+                <p class="text-[10px] uppercase tracking-widest text-white/30">Email Address</p>
+                <p id="email-text" class="text-sm font-bold">concierge@discoverceylon.lk</p>
+            </div>
+        </a>
+        <a id="instagram-link" href="#" class="flex items-center gap-4 group p-3 hover:bg-surface-variant rounded-lg transition-colors">
+            <div class="w-10 h-10 bg-pink-500/10 text-pink-500 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-xl">camera_alt</span>
+            </div>
+            <div>
+                <p class="text-[10px] uppercase tracking-widest text-white/30">Instagram</p>
+                <p id="instagram-text" class="text-sm font-bold">@discoverceylon</p>
+            </div>
+        </a>
+    </div>
+</div>
+<script>
+    async function loadContactContent() {
+        const settings = await fetch('/api/settings').then(res => res.json());
+        
+        const whatsappLink = document.getElementById('whatsapp-link');
+        const whatsappText = document.getElementById('whatsapp-text');
+        const facebookLink = document.getElementById('facebook-link');
+        const facebookText = document.getElementById('facebook-text');
+        const emailLink = document.getElementById('email-link');
+        const emailText = document.getElementById('email-text');
+        const instagramLink = document.getElementById('instagram-link');
+        const instagramText = document.getElementById('instagram-text');
+
+        if (settings.whatsapp_number) {
+            whatsappLink.href = `https://wa.me/${settings.whatsapp_number.replace('+', '')}`;
+            whatsappText.textContent = settings.whatsapp_number;
+        }
+        if (settings.facebook_url) {
+            facebookLink.href = settings.facebook_url;
+            facebookText.textContent = settings.facebook_url.split('/').pop() || '@DiscoverCeylon';
+        }
+        if (settings.email_address) {
+            emailLink.href = `mailto:${settings.email_address}`;
+            emailText.textContent = settings.email_address;
+        }
+        if (settings.instagram_url) {
+            instagramLink.href = settings.instagram_url;
+            instagramText.textContent = settings.instagram_url.split('/').pop() || '@discoverceylon';
+        }
+    }
+    loadContactContent();
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const itinerary = urlParams.get('itinerary');
+        if (itinerary) {
+            const msgArea = document.getElementById('contact-message');
+            if (msgArea) {
+                msgArea.value = `Hello! I would like to arrange a curated journey focusing on the following regions:\n\n${itinerary}\n\nPlease let me know what options are available.`;
+            }
+            // Clear the selection after transferring to the contact form
+            localStorage.removeItem('selectedRegions');
+        }
+    });
+</script>
+</div>
+<!-- Location Card -->
+<div class="bg-surface-container-highest rounded-xl p-8 border border-white/5 relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform duration-1000">
+<span class="material-symbols-outlined text-[160px]" data-weight="fill">location_on</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline text-xl font-bold mb-4 flex items-center gap-2 uppercase tracking-tighter">
+<span class="material-symbols-outlined text-primary" data-weight="fill">map</span>
+                                Our Headquarters
+                            </h3>
+<address class="not-italic text-on-surface-variant leading-relaxed mb-6 block text-sm">
+                                42 Galle Face Centre Road,<br/>
+                                Colombo 00300,<br/>
+                                Sri Lanka
+                            </address>
+<a class="inline-flex items-center gap-2 text-primary text-[10px] font-extrabold uppercase tracking-[0.2em] hover:gap-4 transition-all" href="#">
+<span>Google Maps View</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Admin Note (Subtle Footer for ease of update) -->
+<div class="px-4 py-2 border-l-2 border-primary/20 bg-primary/5 rounded-r-lg">
+<p class="text-[9px] uppercase tracking-widest text-white/30 leading-tight">Admin Note: Contact details and social links are managed via the Ceylon Verdant CMS.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center px-4 py-3 pb-6 bg-[#1c1b1b]/90 backdrop-blur-xl border-t border-white/5 z-50">
+<a class="flex flex-col items-center justify-center text-white/40 p-2" href="home.html">
+<span class="material-symbols-outlined text-xl" data-icon="explore">explore</span>
+<span class="font-['Manrope'] text-[9px] uppercase tracking-widest mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 p-2" href="contact-us.html">
+<span class="material-symbols-outlined text-xl" data-icon="directions_car">directions_car</span>
+<span class="font-['Manrope'] text-[9px] uppercase tracking-widest mt-1">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary p-2" href="contact-us.html">
+<span class="material-symbols-outlined text-xl" data-icon="chat_bubble" data-weight="fill">chat_bubble</span>
+<span class="font-['Manrope'] text-[9px] uppercase tracking-widest mt-1">Support</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white/40 p-2" href="admin-login.html">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="font-['Manrope'] text-[9px] uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Persistent Floating WhatsApp Button -->
+<a class="fixed bottom-24 md:bottom-10 right-6 z-[60] w-14 h-14 md:w-16 md:h-16 whatsapp-gradient text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-110 transition-all active:scale-95 group overflow-visible persistent-whatsapp" href="https://wa.me/" target="_blank">
+<svg class="w-7 h-7 md:w-8 md:h-8 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.499-5.688-1.447l-6.305 1.651zm6.59-4.819c1.52.901 3.013 1.353 4.72 1.353l.597-.001c5.464 0 9.903-4.439 9.903-9.909 0-2.646-1.03-5.131-2.903-7.005-1.872-1.875-4.359-2.907-7.004-2.908-5.464 0-9.903 4.438-9.903 9.908 0 1.77.474 3.403 1.373 4.788l-.991 3.616 3.708-.942zm11.366-4.635c-.195-.097-1.155-.57-1.334-.635-.178-.066-.308-.097-.439.097-.131.196-.505.635-.619.765-.114.131-.228.147-.423.049-.195-.098-.823-.304-1.567-.968-.58-.517-.971-1.155-1.085-1.351-.114-.196-.012-.302.085-.4c.088-.088.195-.228.293-.342.097-.114.129-.196.195-.326.065-.131.032-.245-.017-.342-.049-.098-.439-1.058-.602-1.45-.158-.38-.313-.329-.439-.335l-.373-.007c-.13 0-.341.049-.519.245-.178.196-.682.668-.682 1.629s.7 1.891.797 2.021c.097.131 1.377 2.102 3.336 2.946.466.202.83.322 1.113.411.468.148.894.127 1.231.077.375-.056 1.155-.472 1.318-.929.163-.457.163-.848.114-.929-.049-.081-.179-.129-.373-.227z"></path>
+</svg>
+<span class="absolute right-full mr-4 bg-primary text-on-primary text-[10px] font-bold py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap shadow-xl uppercase tracking-widest">Chat with us</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-white/20"></span>
+</span>
+</a>
+<script>(async () => {
+    const adminLink = document.getElementById('nav-admin-link');
+    const adminRes = await fetch('/api/admin/me').catch(() => null);
+    if (adminRes && adminRes.ok) {
+        const admin = await adminRes.json();
+        adminLink.textContent = 'Dashboard';
+        adminLink.href = 'admin-dashboard.html';
+        adminLink.classList.remove('hidden');
+        // Add logout button if not present
+        if (!document.getElementById('nav-logout-btn')) {
+            const logoutBtn = document.createElement('span');
+            logoutBtn.id = 'nav-logout-btn';
+            logoutBtn.className = 'text-primary font-bold text-sm cursor-pointer ml-4';
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.onclick = async () => {
+                await fetch('/api/admin/logout', { method: 'POST' });
+                window.location.reload();
+            };
+            adminLink.parentNode.appendChild(logoutBtn);
+        }
+    } else {
+        adminLink.classList.remove('hidden');
+    }
+})();</script>
+</body></html>

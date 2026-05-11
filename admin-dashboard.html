@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#af8d11",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#005300",
+            "outline-variant": "#404941",
+            "on-tertiary-fixed": "#3a0b00",
+            "tertiary": "#ffb59e",
+            "surface-container-high": "#2a2a2a",
+            "inverse-primary": "#126e0c",
+            "surface-container-highest": "#353534",
+            "on-surface-variant": "#c0c9be",
+            "primary-fixed-dim": "#82db6f",
+            "primary-fixed": "#9df888",
+            "on-background": "#e5e2e1",
+            "outline": "#8a9389",
+            "tertiary-fixed": "#ffdbd0",
+            "error-container": "#93000a",
+            "surface-container": "#201f1f",
+            "on-primary": "#003a00",
+            "on-tertiary-fixed-variant": "#852400",
+            "tertiary-fixed-dim": "#ffb59e",
+            "tertiary-container": "#7a2000",
+            "background": "#131313",
+            "surface-dim": "#131313",
+            "surface-container-low": "#1c1b1b",
+            "on-secondary-fixed": "#241a00",
+            "on-surface": "#e5e2e1",
+            "error": "#ffb4ab",
+            "primary-container": "#004c00",
+            "inverse-on-surface": "#313030",
+            "on-secondary-fixed-variant": "#574500",
+            "on-secondary-container": "#342800",
+            "surface": "#131313",
+            "surface-container-lowest": "#0e0e0e",
+            "secondary-fixed": "#ffe088",
+            "secondary-fixed-dim": "#e9c349",
+            "surface-tint": "#82db6f",
+            "on-tertiary": "#5e1700",
+            "on-primary-container": "#69c057",
+            "on-tertiary-container": "#ff8d69",
+            "surface-bright": "#3a3939",
+            "secondary": "#e9c349",
+            "primary": "#82db6f",
+            "on-primary-fixed": "#002200",
+            "surface-variant": "#353534",
+            "inverse-surface": "#e5e2e1",
+            "on-secondary": "#3c2f00",
+            "on-error": "#690005"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        },
+      }
+    }
+  </script>
+<style>
+    body { font-family: 'Manrope', sans-serif; background-color: #131313; color: #e5e2e1; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #353534; border-radius: 10px; }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+    }
+    .modal-content {
+        background-color: #1c1b1b;
+        margin: 5% auto;
+        padding: 2rem;
+        border: 1px solid #404941;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-background">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-[#1c1b1b] rounded-r-xl tonal-layering font-['Manrope'] font-medium hidden md:flex flex-col">
+<div class="p-8">
+<h1 class="text-[#82db6f] font-['Plus_Jakarta_Sans'] text-2xl font-extrabold tracking-tighter">Discover Ceylon</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-[#353534] scale-98 transition-transform rounded-lg" href="home.html">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-[#353534] scale-98 transition-transform rounded-lg" href="contact-us.html">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span>Contact Us</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-[#353534] scale-98 transition-transform rounded-lg" href="about-us.html">
+<span class="material-symbols-outlined">info</span>
+<span>About Us</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#004c00] text-[#82db6f] rounded-lg" href="admin-dashboard.html">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span>Admin</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="bg-surface-container-high p-4 rounded-xl">
+<p class="text-xs text-outline uppercase tracking-widest font-bold mb-2">SYSTEM STATUS</p>
+<div class="flex items-center gap-2 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-sm">Server Online</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen">
+<!-- Header -->
+<header class="fixed top-0 right-0 left-0 md:left-64 z-50 bg-[#131313]/70 backdrop-blur-md text-[#82db6f] font-['Plus_Jakarta_Sans'] font-bold tracking-tight shadow-2xl shadow-black/40 flex justify-between items-center px-8 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="text-xl">Admin Dashboard</span>
+</div>
+<div class="flex items-center gap-6">
+<button onclick="logout()" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-xs font-bold">LOGOUT</span>
+</button>
+<div class="flex items-center gap-3 bg-surface-container-high py-1 px-3 rounded-full">
+<div id="admin-initials" class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-primary text-xs">??</div>
+<span id="admin-name" class="text-sm text-on-surface">Admin</span>
+</div>
+</div>
+</header>
+<div class="pt-24 pb-12 px-8 max-w-7xl mx-auto space-y-8">
+<!-- Welcome Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-4">
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight font-headline">Manage Ceylon's Essence</h2>
+<p class="text-on-surface-variant body-lg max-w-2xl">Curation control for the premium travel portal. Update destinations, manage the fleet, and refine the story of the lush island.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Live Reach</span>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div class="mt-4">
+<span class="text-3xl font-bold">12,482</span>
+<p class="text-sm text-on-surface-variant">Active monthly explorers</p>
+</div>
+</div>
+</section>
+<!-- Grid Layout for Management -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Section: Content Editor (Description) -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-6 lg:col-span-2">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">edit_note</span>
+              Island Narrative
+            </h3>
+<button onclick="updateSettings()" class="bg-primary-container text-primary text-sm px-4 py-2 rounded-lg hover:scale-105 transition-transform">Update Live</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <label class="block">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">HOME HERO DESCRIPTION</span>
+        <textarea id="setting-home-description" class="w-full bg-surface-container-high border-none rounded-xl p-4 text-on-surface focus:ring-1 focus:ring-primary transition-all" rows="4"></textarea>
+    </label>
+    <label class="block">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">ABOUT US DESCRIPTION</span>
+        <textarea id="setting-about-description" class="w-full bg-surface-container-high border-none rounded-xl p-4 text-on-surface focus:ring-1 focus:ring-primary transition-all" rows="4"></textarea>
+    </label>
+</div>
+<div class="grid grid-cols-2 gap-4">
+    <label class="block">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">WHATSAPP NUMBER</span>
+        <input type="text" id="setting-whatsapp" class="w-full bg-surface-container-high border-none rounded-xl p-3 text-on-surface focus:ring-1 focus:ring-primary transition-all">
+    </label>
+    <label class="block">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">EMAIL ADDRESS</span>
+        <input type="text" id="setting-email" class="w-full bg-surface-container-high border-none rounded-xl p-3 text-on-surface focus:ring-1 focus:ring-primary transition-all">
+    </label>
+</div>
+<div class="grid grid-cols-2 gap-4">
+    <label class="block">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">FACEBOOK URL</span>
+        <input type="text" id="setting-facebook" class="w-full bg-surface-container-high border-none rounded-xl p-3 text-on-surface focus:ring-1 focus:ring-primary transition-all">
+    </label>
+    <label class="block">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">INSTAGRAM URL</span>
+        <input type="text" id="setting-instagram" class="w-full bg-surface-container-high border-none rounded-xl p-3 text-on-surface focus:ring-1 focus:ring-primary transition-all">
+    </label>
+</div>
+<div class="grid grid-cols-2 gap-4">
+    <label class="block col-span-2">
+        <span class="text-sm text-outline mb-2 block uppercase tracking-wider font-bold">STANDARD DAILY RATE</span>
+        <input type="text" id="setting-daily-rate" class="w-full bg-surface-container-high border-none rounded-xl p-3 text-on-surface focus:ring-1 focus:ring-primary transition-all">
+    </label>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div 
+    id="hero-drop-zone"
+    onclick="document.getElementById('hero-img-input').click()" 
+    ondragover="event.preventDefault(); this.classList.add('border-primary')"
+    ondragleave="this.classList.remove('border-primary')"
+    ondrop="handleHeroDrop(event)"
+    class="p-4 bg-surface-container-high rounded-xl border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary/50 transition-colors"
+>
+<span class="material-symbols-outlined text-3xl text-outline mb-2">add_a_photo</span>
+<p class="text-xs text-outline font-bold uppercase">CHANGE HERO IMAGE</p>
+<p class="text-[10px] text-outline/50 mt-1 uppercase">OR DRAG & DROP</p>
+<input type="file" id="hero-img-input" class="hidden" accept="image/*" onchange="uploadHeroImage(this)">
+</div>
+<div class="relative rounded-xl overflow-hidden group">
+<img id="setting-hero-preview" class="w-full h-32 object-cover transition-transform group-hover:scale-110" src="https://images.placeholder.com/600x300">
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Quick Actions / Fleet Status -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">directions_car</span>
+            Fleet &amp; Rates
+          </h3>
+<div id="vehicle-list" class="space-y-3">
+<!-- Dynamically Filled -->
+</div>
+<button onclick="showVehicleModal()" class="w-full py-3 bg-primary-container text-primary rounded-xl font-bold hover:scale-[1.02] transition-transform">Add New Vehicle</button>
+</div>
+<!-- Section: Province Details Manager -->
+<div class="lg:col-span-3 bg-surface-container-low p-8 rounded-xl space-y-8">
+<div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
+<div>
+<h3 class="text-2xl font-bold font-headline">Provincial Curation</h3>
+<p class="text-on-surface-variant">Update spots, hotels, and recommended itineraries by province.</p>
+</div>
+
+</div>
+<div id="province-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Dynamically Filled -->
+</div>
+</div>
+<!-- Section: "About Us" Content Control -->
+<div class="lg:col-span-1 bg-surface-container-low p-6 rounded-xl space-y-4">
+<h3 class="text-xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+            Company Bio
+          </h3>
+<div class="space-y-4">
+<div class="bg-surface-container-high p-4 rounded-xl space-y-2">
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">OUR MISSION</span>
+<p class="text-sm">To provide a bridge between the wandering soul and the ancient secrets of Sri Lanka...</p>
+<button class="text-xs text-primary font-bold">Edit Statement</button>
+</div>
+<div class="bg-surface-container-high p-4 rounded-xl space-y-2">
+<span class="text-[10px] font-bold text-outline uppercase tracking-widest">DRAG-AND-DROP REORDER</span>
+<div class="space-y-2">
+<div class="bg-surface-container-lowest p-2 rounded border border-outline-variant/10 flex items-center gap-2 cursor-move">
+<span class="material-symbols-outlined text-outline text-sm">drag_indicator</span>
+<span class="text-xs">Safety First Policy</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded border border-outline-variant/10 flex items-center gap-2 cursor-move">
+<span class="material-symbols-outlined text-outline text-sm">drag_indicator</span>
+<span class="text-xs">Expert Local Guides</span>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded border border-outline-variant/10 flex items-center gap-2 cursor-move">
+<span class="material-symbols-outlined text-outline text-sm">drag_indicator</span>
+<span class="text-xs">24/7 Concierge Support</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Interactive Map Curation -->
+<div class="lg:col-span-2 bg-surface-container-low p-6 rounded-xl space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold">Interactive Experience</h3>
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1 rounded-full text-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Central Province Highlighted</span>
+</div>
+</div>
+<div class="relative bg-surface-container-high rounded-xl h-64 overflow-hidden flex items-center justify-center">
+<img class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" data-alt="minimalist stylized map of Sri Lanka with glowing province borders on a dark textured background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg1eRyjFD2ymfKKzb826Jah1mGn_FxJVa7bvuedCYEqdc8sK0etGj4N8ggwjFLle40jxOxbFp58G0cPDNNSrVXMZ8qYcaxZrcOEyx8pntJV2GI0XRV4RRi64KElcPHP8Gwxqa4izjKem1LYVS4IXXxiPxyzhI6-btde4CFpEbV3hpYOMW4oHYF7XcYRn87oYFeUwrk-HOIf6MmoO9PaXhxfe_rh64DTyHN2gUstVZyx4vE_WfCoqfitB7VvAYa0AhRUjZqBPM3Yjw"/>
+<div class="z-10 text-center space-y-2">
+<span class="material-symbols-outlined text-4xl text-primary">map</span>
+<p class="font-bold text-lg">Visual Map Curator</p>
+<button class="bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-lg text-sm font-bold">Edit Active Zones</button>
+</div>
+<!-- Overlay indicators for hotspots -->
+<div class="absolute top-1/2 left-1/2 -translate-x-4 -translate-y-8 w-4 h-4 bg-primary rounded-full animate-ping opacity-75"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-4 -translate-y-8 w-4 h-4 bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#404941]/15 bg-[#131313] font-['Manrope'] text-sm tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-6">
+<div class="text-lg font-bold text-[#82db6f]">Discover Ceylon</div>
+<div class="text-gray-500">© 2024 Discover Ceylon Travel Concierge. All Rights Reserved.</div>
+<div class="flex gap-8">
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors" href="#">Terms of Service</a>
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</main>
+<div id="manage-province-modal" class="modal">
+    <div class="modal-content !max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar">
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h2 class="text-3xl font-headline font-bold text-primary" id="manage-province-title">Manage Province Details</h2>
+                <p class="text-sm text-outline" id="manage-province-subtitle">Add/edit tourist spots and luxury stays</p>
+            </div>
+            <button onclick="closeModal('manage-province-modal')" class="text-outline hover:text-white">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <input type="hidden" id="active-province-id">
+
+        <div class="space-y-12">
+            <!-- Spots Section -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">location_on</span>
+                        Tourist Spots
+                    </h3>
+                    <button onclick="showSpotModal()" class="bg-primary/20 text-primary text-xs px-4 py-2 rounded-lg font-bold hover:bg-primary/30 transition-all">+ ADD SPOT</button>
+                </div>
+                <div id="spots-admin-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Spots will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Hotels Section -->
+            <section>
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">hotel</span>
+                        Luxury Stays
+                    </h3>
+                    <button onclick="showHotelModal()" class="bg-primary/20 text-primary text-xs px-4 py-2 rounded-lg font-bold hover:bg-primary/30 transition-all">+ ADD HOTEL</button>
+                </div>
+                <div id="hotels-admin-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Hotels will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Inquiries / Booking Notifications Section -->
+<div class="mt-8 bg-surface-container-low p-6 rounded-xl border border-outline-variant/15">
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary">notifications</span>
+            Booking Inquiries
+            <span id="inquiry-badge" class="hidden bg-error text-on-error text-xs font-bold px-2 py-0.5 rounded-full">0 New</span>
+        </h3>
+        <button onclick="loadInquiries()" class="text-outline hover:text-white text-xs flex items-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">refresh</span> Refresh
+        </button>
+    </div>
+    <div id="inquiries-list" class="space-y-3">
+        <p class="text-outline text-sm text-center py-6">Loading inquiries...</p>
+    </div>
+</div>
+
+<div id="spot-modal" class="modal">
+    <div class="modal-content">
+        <h2 class="text-2xl font-bold mb-6" id="spot-modal-title">Add Tourist Spot</h2>
+        <form id="spot-form" class="space-y-4">
+            <input type="hidden" id="spot-id">
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">NAME</label>
+                <input type="text" id="spot-name" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+            </div>
+            <div class="grid grid-cols-1 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">TAGS (Comma separated)</label>
+                    <input type="text" id="spot-tags" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" placeholder="e.g. UNESCO, Nature">
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">DESCRIPTION</label>
+                <textarea id="spot-desc" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" rows="3" required></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">IMAGE</label>
+                <input type="file" id="spot-image-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" accept="image/*">
+            </div>
+            <div class="flex justify-end gap-4 mt-8">
+                <button type="button" onclick="closeModal('spot-modal')" class="px-6 py-2 rounded-lg border border-outline-variant/30 font-bold hover:bg-surface-bright transition-colors text-sm">CANCEL</button>
+                <button type="submit" class="px-6 py-2 bg-primary text-on-primary rounded-lg font-bold hover:brightness-110 transition-all text-sm">SAVE SPOT</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="hotel-modal" class="modal">
+    <div class="modal-content">
+        <h2 class="text-2xl font-bold mb-6" id="hotel-modal-title">Add Hotel</h2>
+        <form id="hotel-form" class="space-y-4">
+            <input type="hidden" id="hotel-id">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">NAME</label>
+                    <input type="text" id="hotel-name" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">STARS</label>
+                    <input type="number" id="hotel-stars" min="1" max="5" value="5" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">DESCRIPTION</label>
+                <textarea id="hotel-desc" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" rows="3" required></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">IMAGE</label>
+                <input type="file" id="hotel-image-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" accept="image/*">
+            </div>
+            <div class="flex justify-end gap-4 mt-8">
+                <button type="button" onclick="closeModal('hotel-modal')" class="px-6 py-2 rounded-lg border border-outline-variant/30 font-bold hover:bg-surface-bright transition-colors text-sm">CANCEL</button>
+                <button type="submit" class="px-6 py-2 bg-primary text-on-primary rounded-lg font-bold hover:brightness-110 transition-all text-sm">SAVE HOTEL</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="vehicle-modal" class="modal">
+    <div class="modal-content">
+        <h2 class="text-2xl font-bold mb-6" id="vehicle-modal-title">Add Vehicle</h2>
+        <form id="vehicle-form" class="space-y-4">
+            <input type="hidden" id="vehicle-id">
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">NAME</label>
+                <input type="text" id="vehicle-name" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">RATE (e.g. $0.85/km)</label>
+                <input type="text" id="vehicle-rate" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">DETAILS</label>
+                <textarea id="vehicle-details" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" rows="3" required></textarea>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">IMAGE</label>
+                <input type="file" id="vehicle-image-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" accept="image/*">
+            </div>
+            <div class="flex justify-end gap-4 mt-8">
+                <button type="button" onclick="closeModal('vehicle-modal')" class="px-6 py-2 rounded-lg border border-outline-variant/30 font-bold hover:bg-surface-bright transition-colors text-sm">CANCEL</button>
+                <button type="submit" class="px-6 py-2 bg-primary text-on-primary rounded-lg font-bold hover:brightness-110 transition-all text-sm">SAVE VEHICLE</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="province-modal" class="modal">
+    <div class="modal-content">
+        <h2 class="text-2xl font-bold mb-6" id="province-modal-title">Add Province</h2>
+        <form id="province-form" class="space-y-4">
+            <input type="hidden" id="province-id">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">NAME</label>
+                    <input type="text" id="province-name-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">TAGLINE</label>
+                    <input type="text" id="province-tagline-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">DESCRIPTION</label>
+                <textarea id="province-desc-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" rows="3" required></textarea>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">TRAVEL TIME</label>
+                    <input type="text" id="province-days-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-outline mb-1">WEATHER RANGE</label>
+                    <input type="text" id="province-weather-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" required>
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-outline mb-1">HERO IMAGE</label>
+                <div class="flex items-center gap-4">
+                    <img id="province-image-preview" class="w-32 h-20 object-cover rounded-lg bg-surface-container-highest border border-outline-variant/20" src="" onerror="this.src='https://images.placeholder.com/600x300'">
+                    <input type="file" id="province-image-input" class="w-full bg-surface-container-high border-none rounded-lg p-3 text-on-surface" accept="image/*" onchange="previewProvinceImage(this)">
+                </div>
+            </div>
+            <div class="flex justify-end gap-4 mt-8">
+                <button type="button" onclick="closeModal('province-modal')" class="px-6 py-2 rounded-lg border border-outline-variant/30 font-bold hover:bg-surface-bright transition-colors text-sm">CANCEL</button>
+                <button type="submit" class="px-6 py-2 bg-primary text-on-primary rounded-lg font-bold hover:brightness-110 transition-all text-sm">SAVE PROVINCE</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Auth Check
+    async function checkAuth() {
+        try {
+            const res = await fetch('/api/admin/me');
+            if (res.status === 401) {
+                window.location.href = 'admin-login.html';
+                return;
+            }
+            const admin = await res.json();
+            document.getElementById('admin-name').textContent = admin.name;
+            document.getElementById('admin-initials').textContent = admin.name.substring(0, 2).toUpperCase();
+        } catch (e) {
+            window.location.href = 'admin-login.html';
+        }
+    }
+
+    async function logout() {
+        await fetch('/api/admin/logout', { method: 'POST' });
+        window.location.href = 'admin-login.html';
+    }
+
+    // Store items for editing
+    window.adminData = { spots: {}, hotels: {}, provinces: {}, vehicles: {} };
+
+    // Settings
+    async function loadSettings() {
+        const settings = await fetch('/api/settings').then(res => res.json());
+        document.getElementById('setting-home-description').value = settings.home_description || '';
+        document.getElementById('setting-about-description').value = settings.about_description || '';
+        document.getElementById('setting-whatsapp').value = settings.whatsapp_number || '';
+        document.getElementById('setting-email').value = settings.email_address || '';
+        document.getElementById('setting-facebook').value = settings.facebook_url || '';
+        document.getElementById('setting-instagram').value = settings.instagram_url || '';
+        document.getElementById('setting-daily-rate').value = settings.daily_rate_standard || '$40/day';
+        document.getElementById('setting-hero-preview').src = settings.home_hero_image || 'https://images.placeholder.com/600x300';
+    }
+
+    async function updateSettings() {
+        const home_description = document.getElementById('setting-home-description').value;
+        const about_description = document.getElementById('setting-about-description').value;
+        const whatsapp_number = document.getElementById('setting-whatsapp').value;
+        const email_address = document.getElementById('setting-email').value;
+        const facebook_url = document.getElementById('setting-facebook').value;
+        const instagram_url = document.getElementById('setting-instagram').value;
+        const daily_rate_standard = document.getElementById('setting-daily-rate').value;
+
+        await fetch('/api/settings', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                home_description, 
+                about_description,
+                whatsapp_number, 
+                email_address, 
+                facebook_url, 
+                instagram_url,
+                daily_rate_standard
+            })
+        });
+        alert('Settings updated!');
+    }
+
+    async function uploadHeroImage(input) {
+        let file = input.files ? input.files[0] : input;
+        if (!file) return;
+        
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('key', 'home_hero_image');
+        
+        const res = await fetch('/api/settings/image', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await res.json();
+        document.getElementById('setting-hero-preview').src = data.url;
+        document.getElementById('hero-drop-zone').classList.remove('border-primary');
+    }
+
+    function handleHeroDrop(e) {
+        e.preventDefault();
+        const file = e.dataTransfer.files[0];
+        if (file && file.type.startsWith('image/')) {
+            uploadHeroImage(file);
+        }
+    }
+
+    // Province Management Hub
+    async function manageProvinceDetails(id, name) {
+        document.getElementById('active-province-id').value = id;
+        document.getElementById('manage-province-title').textContent = `Managing ${name}`;
+        document.getElementById('manage-province-modal').style.display = 'block';
+        loadProvinceSubItems(id);
+    }
+
+    async function loadProvinceSubItems(id) {
+        const res = await fetch(`/api/provinces/${id}`);
+        const p = await res.json();
+        
+        // Load Spots
+        const spotsList = document.getElementById('spots-admin-list');
+        spotsList.innerHTML = '';
+        p.spots.forEach(s => {
+            window.adminData.spots[s.id] = s;
+            const el = document.createElement('div');
+            el.className = "bg-surface-container-high p-4 rounded-xl flex justify-between items-center";
+            el.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <img src="${s.image_url}" class="w-12 h-12 rounded object-cover">
+                    <div>
+                        <p class="font-bold text-sm">${s.name}</p>
+                        <p class="text-[10px] text-outline">${s.tags || 'No tags'}</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary cursor-pointer text-sm" onclick="editSpot(${s.id})">edit</span>
+                    <span class="material-symbols-outlined text-error cursor-pointer text-sm" onclick="deleteSpot(${s.id})">delete</span>
+                </div>
+            `;
+            spotsList.appendChild(el);
+        });
+
+        // Load Hotels
+        const hotelsList = document.getElementById('hotels-admin-list');
+        hotelsList.innerHTML = '';
+        p.hotels.forEach(h => {
+            window.adminData.hotels[h.id] = h;
+            const el = document.createElement('div');
+            el.className = "bg-surface-container-high p-4 rounded-xl flex justify-between items-center";
+            el.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <img src="${h.image_url}" class="w-12 h-12 rounded object-cover">
+                    <div>
+                        <p class="font-bold text-sm">${h.name}</p>
+                        <p class="text-[10px] text-outline">${h.stars} Stars</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary cursor-pointer text-sm" onclick="editHotel(${h.id})">edit</span>
+                    <span class="material-symbols-outlined text-error cursor-pointer text-sm" onclick="deleteHotel(${h.id})">delete</span>
+                </div>
+            `;
+            hotelsList.appendChild(el);
+        });
+    }
+
+    // Spot CRUD
+    function showSpotModal() {
+        document.getElementById('spot-modal-title').textContent = 'Add Tourist Spot';
+        document.getElementById('spot-form').reset();
+        document.getElementById('spot-id').value = '';
+        document.getElementById('spot-modal').style.display = 'block';
+    }
+
+    function editSpot(id) {
+        const s = window.adminData.spots[id];
+        document.getElementById('spot-modal-title').textContent = 'Edit Tourist Spot';
+        document.getElementById('spot-id').value = s.id;
+        document.getElementById('spot-name').value = s.name;
+        document.getElementById('spot-tags').value = s.tags || '';
+        document.getElementById('spot-desc').value = s.description;
+        document.getElementById('spot-modal').style.display = 'block';
+    }
+
+    async function deleteSpot(id) {
+        if (!confirm('Are you sure?')) return;
+        await fetch(`/api/spots/${id}`, { method: 'DELETE' });
+        loadProvinceSubItems(document.getElementById('active-province-id').value);
+    }
+
+    document.getElementById('spot-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('spot-id').value;
+        const provinceId = document.getElementById('active-province-id').value;
+        const formData = new FormData();
+        formData.append('province_id', provinceId);
+        formData.append('name', document.getElementById('spot-name').value);
+        formData.append('tags', document.getElementById('spot-tags').value);
+        formData.append('description', document.getElementById('spot-desc').value);
+        
+        const fileInput = document.getElementById('spot-image-input');
+        if (fileInput.files[0]) formData.append('image', fileInput.files[0]);
+
+        const url = id ? `/api/spots/${id}` : '/api/spots';
+        const method = id ? 'PUT' : 'POST';
+        await fetch(url, { method, body: formData });
+        closeModal('spot-modal');
+        loadProvinceSubItems(provinceId);
+        loadProvinces(); // Update counts on main dashboard
+    };
+
+    // Hotel CRUD
+    function showHotelModal() {
+        document.getElementById('hotel-modal-title').textContent = 'Add Hotel';
+        document.getElementById('hotel-form').reset();
+        document.getElementById('hotel-id').value = '';
+        document.getElementById('hotel-modal').style.display = 'block';
+    }
+
+    function editHotel(id) {
+        const h = window.adminData.hotels[id];
+        document.getElementById('hotel-modal-title').textContent = 'Edit Hotel';
+        document.getElementById('hotel-id').value = h.id;
+        document.getElementById('hotel-name').value = h.name;
+        document.getElementById('hotel-stars').value = h.stars;
+        document.getElementById('hotel-desc').value = h.description;
+        document.getElementById('hotel-modal').style.display = 'block';
+    }
+
+    async function deleteHotel(id) {
+        if (!confirm('Are you sure?')) return;
+        await fetch(`/api/hotels/${id}`, { method: 'DELETE' });
+        loadProvinceSubItems(document.getElementById('active-province-id').value);
+    }
+
+    document.getElementById('hotel-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('hotel-id').value;
+        const provinceId = document.getElementById('active-province-id').value;
+        const formData = new FormData();
+        formData.append('province_id', provinceId);
+        formData.append('name', document.getElementById('hotel-name').value);
+        formData.append('stars', document.getElementById('hotel-stars').value);
+        formData.append('description', document.getElementById('hotel-desc').value);
+        
+        const fileInput = document.getElementById('hotel-image-input');
+        if (fileInput.files[0]) formData.append('image', fileInput.files[0]);
+
+        const url = id ? `/api/hotels/${id}` : '/api/hotels';
+        const method = id ? 'PUT' : 'POST';
+        await fetch(url, { method, body: formData });
+        closeModal('hotel-modal');
+        loadProvinceSubItems(provinceId);
+        loadProvinces(); // Update counts on main dashboard
+    };
+
+    // Vehicles
+    async function loadVehicles() {
+        const vehicles = await fetch('/api/vehicles').then(res => res.json());
+        const list = document.getElementById('vehicle-list');
+        list.innerHTML = '';
+        vehicles.forEach(v => {
+            window.adminData.vehicles[v.id] = v;
+            const el = document.createElement('div');
+            el.className = "bg-surface-container-high p-4 rounded-xl flex justify-between items-center hover:bg-surface-bright transition-colors";
+            el.innerHTML = `
+                <div>
+                    <p class="font-bold">${v.name}</p>
+                    <p class="text-xs text-outline">${v.rate}</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="material-symbols-outlined text-primary cursor-pointer" onclick="editVehicle(${v.id})">edit</span>
+                    <span class="material-symbols-outlined text-error cursor-pointer" onclick="deleteVehicle(${v.id})">delete</span>
+                </div>
+            `;
+            list.appendChild(el);
+        });
+    }
+
+    function showVehicleModal() {
+        document.getElementById('vehicle-modal-title').textContent = 'Add Vehicle';
+        document.getElementById('vehicle-form').reset();
+        document.getElementById('vehicle-id').value = '';
+        document.getElementById('vehicle-modal').style.display = 'block';
+    }
+
+    function editVehicle(id) {
+        const v = window.adminData.vehicles[id];
+        document.getElementById('vehicle-modal-title').textContent = 'Edit Vehicle';
+        document.getElementById('vehicle-id').value = v.id;
+        document.getElementById('vehicle-name').value = v.name;
+        document.getElementById('vehicle-rate').value = v.rate;
+        document.getElementById('vehicle-details').value = v.details;
+        document.getElementById('vehicle-modal').style.display = 'block';
+    }
+
+    async function deleteVehicle(id) {
+        if (!confirm('Are you sure?')) return;
+        await fetch(`/api/vehicles/${id}`, { method: 'DELETE' });
+        loadVehicles();
+    }
+
+    document.getElementById('vehicle-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('vehicle-id').value;
+        const formData = new FormData();
+        formData.append('name', document.getElementById('vehicle-name').value);
+        formData.append('rate', document.getElementById('vehicle-rate').value);
+        formData.append('details', document.getElementById('vehicle-details').value);
+        
+        const fileInput = document.getElementById('vehicle-image-input');
+        if (fileInput.files[0]) {
+            formData.append('image', fileInput.files[0]);
+        }
+
+        const url = id ? `/api/vehicles/${id}` : '/api/vehicles';
+        const method = id ? 'PUT' : 'POST';
+
+        await fetch(url, { method, body: formData });
+        closeModal('vehicle-modal');
+        loadVehicles();
+    };
+
+    // Provinces
+    async function loadProvinces() {
+        const provinces = await fetch('/api/provinces').then(res => res.json());
+        const list = document.getElementById('province-list');
+        list.innerHTML = '';
+        provinces.forEach(p => {
+            window.adminData.provinces[p.id] = p;
+            const el = document.createElement('div');
+            el.dataset.id = p.id;
+            el.className = "bg-surface-container-high rounded-xl overflow-hidden border border-outline-variant/5 cursor-move";
+            el.innerHTML = `
+                <div class="h-32 bg-cover bg-center" style="background-image: url('${p.image_url || ''}')"></div>
+                <div class="p-5 space-y-4">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-lg font-bold">${p.name}</h4>
+                    </div>
+                    <div class="flex gap-4 text-xs text-outline">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> ${p.spots.length} Spots</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">hotel</span> ${p.hotels.length} Hotels</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="flex-1 py-2 bg-primary text-on-primary text-xs rounded hover:brightness-110 transition-colors" onclick="manageProvinceDetails(${p.id}, '${p.name}')">Manage Details</button>
+                        <button class="flex-1 py-2 bg-surface-container-lowest text-on-surface text-xs rounded hover:bg-surface transition-colors" onclick="editProvince(${p.id})">Basic Info</button>
+                        <button class="p-2 bg-error-container/20 text-error rounded hover:bg-error/20 transition-colors" onclick="deleteProvince(${p.id})">
+                            <span class="material-symbols-outlined text-sm">delete</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            list.appendChild(el);
+        });
+    }
+
+    async function deleteProvince(id) {
+        if (!confirm('Are you sure?')) return;
+        await fetch(`/api/provinces/${id}`, { method: 'DELETE' });
+        loadProvinces();
+    }
+
+    function editProvince(id) {
+        const p = window.adminData.provinces[id];
+        document.getElementById('province-modal-title').textContent = 'Edit Province';
+        document.getElementById('province-id').value = p.id;
+        document.getElementById('province-name-input').value = p.name;
+        document.getElementById('province-tagline-input').value = p.tagline;
+        document.getElementById('province-desc-input').value = p.description;
+        document.getElementById('province-days-input').value = p.visit_days;
+        document.getElementById('province-weather-input').value = p.weather_range;
+        document.getElementById('province-image-preview').src = p.image_url || 'https://images.placeholder.com/600x300';
+        document.getElementById('province-modal').style.display = 'block';
+    }
+
+    function previewProvinceImage(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('province-image-preview').src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    document.getElementById('province-form').onsubmit = async (e) => {
+        e.preventDefault();
+        const id = document.getElementById('province-id').value;
+        const formData = new FormData();
+        formData.append('name', document.getElementById('province-name-input').value);
+        formData.append('tagline', document.getElementById('province-tagline-input').value);
+        formData.append('description', document.getElementById('province-desc-input').value);
+        formData.append('visit_days', document.getElementById('province-days-input').value);
+        formData.append('weather_range', document.getElementById('province-weather-input').value);
+        
+        const fileInput = document.getElementById('province-image-input');
+        if (fileInput.files[0]) {
+            formData.append('image', fileInput.files[0]);
+        }
+
+        const url = id ? `/api/provinces/${id}` : '/api/provinces';
+        const method = id ? 'PUT' : 'POST';
+
+        await fetch(url, { method, body: formData });
+        closeModal('province-modal');
+        loadProvinces();
+    };
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    // Initial Load
+    checkAuth();
+    loadSettings();
+    loadVehicles();
+    loadProvinces();
+    loadInquiries();
+
+    // Province Reordering
+    new Sortable(document.getElementById('province-list'), {
+        animation: 150,
+        ghostClass: 'bg-primary/10',
+        onEnd: async () => {
+            const order = Array.from(document.querySelectorAll('#province-list > div')).map(el => el.dataset.id);
+            await fetch('/api/provinces/reorder', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ order })
+            });
+        }
+    });
+
+    // Sidebar Sorting (for visual consistency/polish)
+    new Sortable(document.querySelector('.lg\\:col-span-1 .space-y-2'), {
+        animation: 150,
+        ghostClass: 'bg-primary/10'
+    });
+</script>
+
+<script>
+    async function loadInquiries() {
+        const container = document.getElementById('inquiries-list');
+        const badge = document.getElementById('inquiry-badge');
+        try {
+            const res = await fetch('/api/inquiries');
+            if (!res.ok) { container.innerHTML = '<p class="text-outline text-sm text-center py-6">You must be logged in to view inquiries.</p>'; return; }
+            const inquiries = await res.json();
+
+            if (!inquiries.length) {
+                container.innerHTML = '<p class="text-outline text-sm text-center py-6">No booking inquiries yet. Selections made by users will appear here.</p>';
+                badge.classList.add('hidden');
+                return;
+            }
+
+            const newCount = inquiries.filter(i => i.status === 'new').length;
+            if (newCount > 0) {
+                badge.textContent = newCount + ' New';
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            container.innerHTML = inquiries.map(i => `
+                <div class="flex flex-col md:flex-row justify-between gap-4 p-4 rounded-xl border ${ i.status === 'new' ? 'bg-primary/5 border-primary/20' : 'border-outline-variant/10 bg-surface-container-high' } transition-all">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            ${ i.status === 'new' ? '<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>' : '' }
+                            <span class="font-bold text-sm">${ i.name || 'Anonymous' }</span>
+                            ${ i.email ? '<span class="text-outline text-xs">· ' + i.email + '</span>' : '' }
+                        </div>
+                        <p class="text-on-surface-variant text-sm"><span class="font-bold text-primary">Regions:</span> ${ i.regions }</p>
+                        <p class="text-outline text-xs mt-2">${ new Date(i.created_at).toLocaleString('en-GB') }</p>
+                    </div>
+                    ${ i.status === 'new' ? `<button onclick="markInquiryRead(${ i.id }); this.closest('div[class]').classList.remove('bg-primary/5','border-primary/20'); this.remove();" class="self-start text-xs px-3 py-1.5 border border-outline-variant/30 rounded-lg text-outline hover:text-white hover:border-white/20 transition-colors whitespace-nowrap">Mark as Read</button>` : '' }
+                </div>
+            `).join('');
+        } catch(e) {
+            container.innerHTML = '<p class="text-error text-sm text-center py-6">Failed to load inquiries.</p>';
+        }
+    }
+
+    async function markInquiryRead(id) {
+        await fetch('/api/inquiries/' + id + '/read', { method: 'PUT' });
+        loadInquiries();
+    }
+</script>
+</body></html>

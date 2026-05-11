@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Discover Ceylon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#af8d11",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#005300",
+                    "outline-variant": "#404941",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "tertiary": "#ffb59e",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-primary": "#126e0c",
+                    "surface-container-highest": "#353534",
+                    "on-surface-variant": "#c0c9be",
+                    "primary-fixed-dim": "#82db6f",
+                    "primary-fixed": "#9df888",
+                    "on-background": "#e5e2e1",
+                    "outline": "#8a9389",
+                    "tertiary-fixed": "#ffdbd0",
+                    "error-container": "#93000a",
+                    "surface-container": "#201f1f",
+                    "on-primary": "#003a00",
+                    "on-tertiary-fixed-variant": "#852400",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "tertiary-container": "#7a2000",
+                    "background": "#131313",
+                    "surface-dim": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#241a00",
+                    "on-surface": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "primary-container": "#004c00",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-secondary-container": "#342800",
+                    "surface": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed": "#ffe088",
+                    "secondary-fixed-dim": "#e9c349",
+                    "surface-tint": "#82db6f",
+                    "on-tertiary": "#5e1700",
+                    "on-primary-container": "#69c057",
+                    "on-tertiary-container": "#ff8d69",
+                    "surface-bright": "#3a3939",
+                    "secondary": "#e9c349",
+                    "primary": "#82db6f",
+                    "on-primary-fixed": "#002200",
+                    "surface-variant": "#353534",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary": "#3c2f00",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <script src="main.js"></script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md shadow-2xl shadow-black/40 flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#82db6f]" style="font-size: 28px;">explore</span>
+<span class="text-2xl font-extrabold text-[#82db6f] tracking-tighter font-['Plus_Jakarta_Sans']">Discover Ceylon</span>
+</div>
+<div class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+<a class="text-gray-400 hover:text-white transition-colors" href="home.html">Home</a>
+<a class="text-[#82db6f] border-b-2 border-[#82db6f] pb-1" href="about-us.html">About Us</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="contact-us.html">Contact Us</a>
+<a id="nav-admin-link" class="text-gray-400 hover:text-white transition-colors hidden" href="admin-login.html">Admin</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-bold hover:bg-[#2a2a2a] hover:scale-[1.02] transition-all duration-300 ease-in-out">
+            Book Now
+        </button>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero Section: The Digital Curator Intro -->
+<section class="px-8 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="space-y-2">
+<span class="text-primary font-label text-sm tracking-[0.2em] uppercase">Curated Journeys</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-tight">
+                        Redefining Island <br/><span class="text-primary">Mobility.</span>
+</h1>
+</div>
+<p id="about-description" class="text-body text-on-surface-variant text-lg leading-relaxed max-w-lg">
+                    Discover Ceylon is not just a cab service; it is Sri Lanka's premier travel concierge. We blend the reliability of a high-end fleet with the soul of a local storyteller, ensuring every mile of your journey across our emerald isle is a curated experience of comfort and luxury.
+                </p>
+<div class="flex flex-wrap gap-4 mt-6">
+<div class="p-4 bg-surface-container-high rounded-xl flex flex-col gap-2">
+<span class="text-3xl font-bold text-primary">15+</span>
+<span class="text-xs uppercase tracking-widest text-outline">Years Experience</span>
+</div>
+<div class="p-4 bg-surface-container-high rounded-xl flex flex-col gap-2">
+<span class="text-3xl font-bold text-24/7">24/7</span>
+<span class="text-xs uppercase tracking-widest text-outline">Concierge Support</span>
+</div>
+<div class="p-4 bg-surface-container-high rounded-xl flex flex-col gap-2 border border-primary/20 shadow-[0_0_15px_rgba(130,219,111,0.1)]">
+<span id="display-daily-rate" class="text-3xl font-bold text-primary">$40/day</span>
+<span class="text-xs uppercase tracking-widest text-outline">Standard Rate</span>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-full"></div>
+<img class="relative rounded-2xl w-full h-[500px] object-cover shadow-2xl border border-outline-variant/10" data-alt="Luxurious black executive car parked on a scenic coastal road in Sri Lanka with palm trees and ocean in the background at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6Bbv15-zx-9UJcyS0L76Il52zLkcqzJwXpmgkCVuRG-dHtoo8UkSFIETLyWRO4c1f5fRVPYAE4su9f3kNO0HX_0dJ7wYCDLOAqS6cQH0aetUXV32GHIUfbeLx_09hUIlCiYkuWGv4ap8cwxKM4qsSnsig0ZPYKko8NicimsB0rXiORR4U2w5lUipjbXr55jIOJj66yhe6LA6PqiAs9k-HAvJeLhYvc2oOl-f7RruyrshoLZl0PowN9zDMFn4qlkiV4AaBAw8oPMg"/>
+</div>
+</section>
+<!-- Fleet Showcase: Bento Grid Layout -->
+<section class="px-8 md:px-12 py-20 bg-surface-container-low">
+<div class="mb-16 text-center max-w-3xl mx-auto space-y-4">
+<h2 class="text-4xl font-headline font-bold">The Executive Fleet</h2>
+<p class="text-on-surface-variant">Precision-engineered for the diverse terrains of Sri Lanka. From the coastal highways to the misty mountain passes.</p>
+</div>
+<div id="vehicles-container" class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
+<!-- Dynamically Filled -->
+</div>
+<script>
+    async function loadAboutContent() {
+        const settings = await fetch('/api/settings').then(res => res.json());
+        if (settings.about_description) {
+            document.getElementById('about-description').textContent = settings.about_description;
+        }
+        if (settings.daily_rate_standard) {
+            document.getElementById('display-daily-rate').textContent = settings.daily_rate_standard;
+        }
+
+        const vehicles = await fetch('/api/vehicles').then(res => res.json());
+        const container = document.getElementById('vehicles-container');
+        container.innerHTML = '';
+        vehicles.forEach((v, index) => {
+            const card = document.createElement('div');
+            // Using a simpler layout for now to ensure consistency
+            card.className = "md:col-span-6 bg-surface-container-high rounded-xl overflow-hidden flex flex-col group h-[400px]";
+            card.innerHTML = `
+                <div class="h-1/2 overflow-hidden">
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="${v.image_url}">
+                </div>
+                <div class="p-8 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-headline font-bold">${v.name}</h3>
+                            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-bold tracking-tight">${v.rate}</span>
+                        </div>
+                        <p class="text-on-surface-variant text-sm">${v.details}</p>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+    loadAboutContent();
+</script>
+</section>
+<!-- Our Principles -->
+<section class="px-8 md:px-24 py-24">
+<div class="flex flex-col md:flex-row gap-16 items-start">
+<div class="md:w-1/3">
+<h2 class="text-4xl font-headline font-extrabold tracking-tighter mb-6">Why Travelers Choose <span class="text-primary">Discover Ceylon.</span></h2>
+<p class="text-on-surface-variant leading-loose">We prioritize three pillars that define every interaction and every mile traveled under our brand.</p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<h4 class="text-xl font-bold">Uncompromising Safety</h4>
+<p class="text-on-surface-variant text-sm">Rigorous 50-point vehicle inspections before every tour and 24/7 real-time GPS tracking for your peace of mind.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<h4 class="text-xl font-bold">Expert Chauffeurs</h4>
+<p class="text-on-surface-variant text-sm">Our drivers are multilingual travel concierges with deep knowledge of Sri Lanka's history, hidden spots, and best local eateries.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">payments</span>
+</div>
+<h4 class="text-xl font-bold">Transparent Pricing</h4>
+<p class="text-on-surface-variant text-sm">No hidden mileage fees or peak-time surcharges. What you see is what you pay, including driver accommodation and fuel.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">eco</span>
+</div>
+<h4 class="text-xl font-bold">Sustainable Travel</h4>
+<p class="text-on-surface-variant text-sm">We invest in carbon-offsetting programs for every kilometer traveled, preserving the nature we so proudly showcase.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 md:px-12 py-12">
+<div class="bg-surface-container-high rounded-3xl p-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 20% 50%, #82db6f 0%, transparent 50%);"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-8">
+<h2 class="text-3xl md:text-5xl font-headline font-bold">Ready for the Curated Island Experience?</h2>
+<p class="text-on-surface-variant text-lg">Speak to our concierge now to customize your itinerary or reserve your preferred vehicle for your upcoming visit.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button onclick="window.location.href='contact-us.html'" class="bg-gradient-to-r from-primary-container to-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform shadow-xl shadow-primary/20">
+                            Book Your Vehicle
+                        </button>
+<button class="bg-surface-container-highest border border-outline-variant/30 text-on-surface px-8 py-4 rounded-xl font-bold text-lg hover:bg-surface-bright transition-colors">
+                            Download Fleet PDF
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full py-12 border-t border-[#404941]/15 font-['Manrope'] text-sm tracking-wide">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 gap-8">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-bold text-[#82db6f]">Discover Ceylon</span>
+<p class="text-gray-500 max-w-xs">The Digital Curator of Sri Lankan Travel. Precision, Comfort, and Soul.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors" href="#">Terms of Service</a>
+<a class="text-gray-500 hover:text-[#82db6f] transition-colors" href="#">FAQ</a>
+</div>
+<div class="text-gray-500">
+                © 2024 Discover Ceylon Travel Concierge. All Rights Reserved.
+            </div>
+</div>
+</footer>
+<!-- Persistent WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group persistent-whatsapp" href="https://wa.me/" target="_blank">
+<svg fill="none" height="32" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+</svg>
+<span class="absolute right-20 bg-surface-container-high px-4 py-2 rounded-lg text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">Chat with Concierge</span>
+</a>
+<script>(async () => {
+    const adminLink = document.getElementById('nav-admin-link');
+    const adminRes = await fetch('/api/admin/me').catch(() => null);
+    if (adminRes && adminRes.ok) {
+        const admin = await adminRes.json();
+        adminLink.textContent = 'Dashboard';
+        adminLink.href = 'admin-dashboard.html';
+        adminLink.classList.remove('hidden');
+        // Add logout button if not present
+        if (!document.getElementById('nav-logout-btn')) {
+            const logoutBtn = document.createElement('span');
+            logoutBtn.id = 'nav-logout-btn';
+            logoutBtn.className = 'text-primary font-bold text-sm cursor-pointer ml-4';
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.onclick = async () => {
+                await fetch('/api/admin/logout', { method: 'POST' });
+                window.location.reload();
+            };
+            adminLink.parentNode.appendChild(logoutBtn);
+        }
+    } else {
+        adminLink.classList.remove('hidden');
+    }
+})();</script>
+</body></html>

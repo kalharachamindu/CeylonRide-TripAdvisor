@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Discover Ceylon | Premium Travel Concierge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#af8d11",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#005300",
+                        "outline-variant": "#404941",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "tertiary": "#ffb59e",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#126e0c",
+                        "surface-container-highest": "#353534",
+                        "on-surface-variant": "#c0c9be",
+                        "primary-fixed-dim": "#82db6f",
+                        "primary-fixed": "#9df888",
+                        "on-background": "#e5e2e1",
+                        "outline": "#8a9389",
+                        "tertiary-fixed": "#ffdbd0",
+                        "error-container": "#93000a",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#003a00",
+                        "on-tertiary-fixed-variant": "#852400",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "tertiary-container": "#7a2000",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed": "#241a00",
+                        "on-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "primary-container": "#004c00",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-container": "#342800",
+                        "surface": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-tint": "#82db6f",
+                        "on-tertiary": "#5e1700",
+                        "on-primary-container": "#69c057",
+                        "on-tertiary-container": "#ff8d69",
+                        "surface-bright": "#3a3939",
+                        "secondary": "#e9c349",
+                        "primary": "#82db6f",
+                        "on-primary-fixed": "#002200",
+                        "surface-variant": "#353534",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary": "#3c2f00",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Manrope', sans-serif;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #004c00 0%, #82db6f 100%);
+        }
+        .scrim-overlay {
+            background: linear-gradient(to top, rgba(14, 14, 14, 0.9) 0%, transparent 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <script src="main.js"></script>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-md shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#82db6f] text-2xl" data-icon="explore">explore</span>
+<h1 class="text-2xl font-extrabold text-[#82db6f] tracking-tighter font-['Plus_Jakarta_Sans']">Discover Ceylon</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight">
+<a class="text-[#82db6f] border-b-2 border-[#82db6f] pb-1" href="home.html">Home</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="about-us.html">About Us</a>
+<a class="text-gray-400 hover:text-white transition-colors" href="contact-us.html">Contact Us</a>
+<a id="nav-admin-link" class="text-gray-400 hover:text-white transition-colors hidden" href="admin-login.html">Admin</a>
+<span id="nav-logout-btn" class="hidden text-primary font-bold text-sm cursor-pointer" onclick="adminLogout()">Logout</span>
+</nav>
+
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[795px] w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Mist-covered lush green tea plantations in the Sri Lankan central highlands at sunrise" class="w-full h-full object-cover hero-image" data-alt="cinematic wide shot of rolling emerald tea plantations in Sri Lanka at dawn with ethereal mist and golden sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBorYm24Yv6p6cWKilnWWmDKY_R0xRFfX588T397XEcLJ-MNvFF-E98DL9SLnLvAK5nx4BUH3blOIoEOtW4jtfkxS-wv8S2-oSrw5grszKncMUopKkdYUdAiqFi-_zIy3NiakJu0oEkmYnH931ef8qVazAqBeybhbMgTIratEqnvQ5OJHgbo5mwf49nG2DhKmFiwJgkqPgC4ZCrpUnzuAklv4GMgz3L_u7UgGTSi4ICchSYHbJFtGJvbpkXohE1z_rpSaC7HmgjLxM"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#131313] via-[#131313]/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-20 max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-surface-container-high/50 backdrop-blur-sm border border-outline-variant/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs font-label font-bold tracking-[0.1em] text-primary">01 CURATED EXPERIENCES</span>
+</div>
+<h2 class="text-5xl md:text-8xl font-headline font-extrabold tracking-tight leading-[0.9] text-white mb-8">
+                    The Soul of <span class="text-primary italic">Paradise</span>
+</h2>
+<p id="hero-description" class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed font-body">
+                    Sri Lanka is not just a destination; it's a sensory journey through ancient citadels, emerald tea hills, and sapphire shores. We curate your passage through the Wonder of Asia with precision and elegance.
+                </p>
+
+</div>
+</section>
+<!-- Province Explorer Section -->
+<section class="py-24 px-8 md:px-20 bg-surface">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h3 class="text-4xl font-headline font-extrabold tracking-tight text-white mb-6">Explore by <span class="text-secondary">Province</span></h3>
+<p class="text-on-surface-variant leading-relaxed">Sri Lanka is divided into nine unique provinces, each offering a distinct climate, landscape, and heritage. Select a region on the map or the list below to discover your next curated destination.</p>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="text-3xl font-bold text-primary">09</span>
+<span class="text-[10px] font-label tracking-widest text-outline uppercase">Provinces</span>
+</div>
+<div class="w-[1px] h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center">
+<span class="text-3xl font-bold text-primary">25</span>
+<span class="text-[10px] font-label tracking-widest text-outline uppercase">Districts</span>
+</div>
+</div>
+</div>
+<!-- Asymmetric Grid with Map -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Province List (Bento-style) -->
+<div id="province-list-left" class="lg:col-span-4 grid grid-cols-1 gap-3 h-full">
+<!-- Dynamically Filled -->
+</div>
+<!-- Central Interactive Map Reference Area -->
+<div class="lg:col-span-5 relative flex items-center justify-center p-8 bg-surface-container-low rounded-3xl overflow-hidden aspect-square border border-outline-variant/10 group">
+<!-- Subtle glow background -->
+<div class="absolute inset-0 bg-primary/5 blur-3xl rounded-full opacity-50"></div>
+<style>
+    .province-path { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; stroke: #131313; stroke-width: 2; opacity: 0.6; pointer-events: all; }
+    .province-path:hover { opacity: 1; stroke: #fff; stroke-width: 3; filter: drop-shadow(0 0 12px rgba(130, 219, 111, 0.4)); transform: translateY(-3px); }
+    .province-path.active { opacity: 1; stroke: #fff; stroke-width: 3; filter: drop-shadow(0 0 20px rgba(130, 219, 111, 0.6)); }
+</style>
+<div class="relative w-full h-full flex items-center justify-center p-4">
+    <svg viewBox="0 0 694 874" class="w-full h-full drop-shadow-2xl">
+        <!-- Northern Province -->
+        <path id="province-path-4" onclick="openProvince(4)" class="province-path" fill="#ffb59e" d="M 208.0 20.3 C 213.6 14.4 222.1 14.2 229.6 12.9 C 232.7 18.8 235.6 24.9 239.7 30.3 C 249.5 43.3 260.3 55.8 273.3 65.6 C 284.6 74.5 295.5 84.0 307.9 91.2 C 322.0 98.8 331.9 111.8 343.1 122.9 C 358.8 138.8 366.8 160.1 376.0 180.0 C 379.9 187.6 379.1 197.3 374.4 204.3 C 367.5 208.5 358.8 207.0 351.3 209.5 C 342.9 212.2 334.7 215.6 327.0 220.1 C 321.9 222.7 320.0 228.5 317.5 233.3 C 311.8 246.8 303.0 259.8 289.6 266.5 C 283.4 266.5 277.9 261.5 271.4 262.2 C 264.9 268.2 260.2 275.9 256.3 283.8 C 253.5 288.9 246.7 293.9 241.0 290.0 C 234.1 283.9 226.4 276.1 227.1 266.1 C 215.9 268.2 204.3 268.3 193.4 271.6 C 188.5 279.8 190.3 289.9 186.7 298.6 C 178.0 295.1 169.2 291.6 160.0 289.6 C 164.4 279.7 166.7 268.9 166.8 258.0 C 166.5 250.5 164.6 243.2 163.3 235.8 C 161.5 226.7 160.9 217.4 160.0 208.2 C 169.5 202.7 180.0 198.0 187.3 189.5 C 190.8 184.0 192.3 177.6 194.8 171.7 C 199.4 159.3 205.7 146.4 202.8 132.9 C 199.5 123.8 198.4 114.2 197.7 104.6 C 205.8 101.6 213.4 97.2 220.8 92.6 C 216.4 77.8 199.9 73.5 189.3 64.4 C 203.8 67.2 217.6 73.2 230.3 80.7 C 243.8 88.7 260.1 84.9 274.9 87.2 C 282.7 87.3 289.0 92.2 295.7 95.3 C 300.4 97.7 305.9 96.3 310.9 97.0 C 303.9 89.9 294.5 85.9 285.9 81.1 C 275.1 74.3 260.8 79.0 250.3 71.6 C 238.4 63.7 227.1 52.6 212.2 51.1 C 213.9 56.2 216.7 60.9 219.0 65.8 C 201.2 62.5 185.4 53.1 169.9 44.1 C 162.8 41.0 161.8 32.9 160.5 26.3 C 166.0 22.1 171.0 16.2 178.2 15.2 C 185.3 15.2 192.9 16.2 199.1 19.9 C 201.9 21.6 204.0 24.4 207.1 25.5 C 213.6 28.1 220.7 29.0 226.8 32.2 C 239.4 47.1 252.5 65.3 273.3 68.1 C 271.7 66.7 270.1 65.2 268.4 63.8 C 255.5 51.7 242.1 40.1 229.3 27.8 C 222.8 23.9 214.8 23.4 208.0 20.3 Z" />
+        
+        <!-- North Central -->
+        <path id="province-path-5" onclick="openProvince(5)" class="province-path" fill="#7a2000" d="M 328.0 221.0 C 333.5 218.1 339.0 214.8 345.2 213.4 C 356.8 213.6 367.4 220.6 373.9 230.0 C 371.6 235.5 368.0 240.8 367.5 246.9 C 368.3 254.9 369.9 262.8 371.4 270.7 C 373.6 285.5 387.8 295.8 388.8 310.9 C 386.3 318.7 377.7 323.7 376.3 331.9 C 378.1 340.9 385.3 348.4 393.2 352.6 C 415.2 358.3 438.2 358.3 460.7 359.3 C 461.3 377.5 459.8 395.7 458.8 413.9 C 458.3 417.4 458.6 421.4 456.6 424.6 C 453.6 427.6 448.9 429.3 448.2 434.2 C 443.5 448.3 447.3 463.4 446.8 477.9 C 446.0 483.0 443.8 487.7 441.8 492.5 C 431.5 487.9 420.5 483.3 413.5 474.2 C 400.5 476.0 387.3 475.5 374.2 475.5 C 368.0 478.2 363.0 483.6 355.9 483.9 C 352.6 483.5 346.0 482.8 342.6 482.5 C 341.4 473.3 342.8 464.1 346.7 455.7 C 350.7 446.3 354.6 436.9 358.0 427.2 C 352.4 422.4 347.1 417.1 340.9 413.1 C 337.5 413.1 334.8 415.4 332.0 416.9 C 324.9 421.0 318.8 426.4 313.8 432.8 C 308.9 437.8 305.4 444.5 298.9 447.7 C 295.5 449.6 292.0 451.3 288.3 452.2 C 285.3 453.2 281.8 451.1 281.2 448.0 C 278.2 431.9 272.5 415.2 260.7 403.3 C 239.3 386.0 214.5 373.4 190.0 361.0 C 185.7 358.0 180.8 360.1 176.7 362.1 C 172.8 351.4 168.7 340.6 167.2 329.3 C 173.1 322.8 182.1 318.0 184.5 308.8 C 186.1 301.4 190.4 294.7 190.6 286.9 C 190.8 281.8 192.2 277.0 193.8 272.2 C 204.7 270.6 215.5 269.1 226.3 267.0 C 224.5 277.0 233.0 283.7 238.8 290.2 C 245.2 295.5 253.8 291.0 257.7 285.0 C 260.6 276.6 266.1 269.3 272.4 263.2 C 278.9 261.5 283.2 269.3 289.3 268.3 C 303.1 261.4 313.0 248.4 318.4 234.2 C 320.9 229.5 322.9 223.6 328.0 221.0 Z" />
+        
+        <!-- North Western -->
+        <path id="province-path-6" onclick="openProvince(6)" class="province-path" fill="#af8d11" d="M 149.1 295.9 C 152.7 294.3 156.0 291.8 159.9 291.3 C 169.0 291.8 177.0 296.5 185.4 299.5 C 184.7 311.8 175.6 321.2 166.0 327.9 C 167.9 339.6 170.5 351.6 175.7 362.3 C 178.9 363.8 183.1 359.6 186.8 361.2 C 194.5 364.2 201.6 368.3 208.9 372.2 C 228.1 382.6 247.8 393.1 263.7 408.3 C 269.4 415.5 272.9 424.3 276.3 432.8 C 278.7 438.7 277.5 446.1 281.8 451.1 C 287.6 456.7 286.3 465.5 289.5 472.4 C 296.9 490.6 300.8 510.1 299.7 529.8 C 293.1 539.3 284.6 547.7 274.8 553.9 C 271.0 556.2 266.8 552.5 264.0 549.9 C 260.5 546.0 253.1 545.2 250.1 550.1 C 241.5 559.9 229.8 566.2 219.0 573.4 C 215.5 569.7 212.0 565.8 208.6 561.9 C 199.7 562.0 191.0 563.8 182.3 565.3 C 168.9 567.7 155.3 569.5 142.0 572.7 C 138.7 543.2 131.5 514.0 132.7 484.1 C 129.2 462.1 126.0 439.6 117.1 418.9 C 112.9 405.4 113.2 390.9 112.3 376.9 C 110.5 369.1 115.9 362.7 120.8 357.4 C 119.3 372.9 115.7 388.4 117.5 404.1 C 118.0 407.8 117.1 413.5 121.3 415.7 C 126.8 417.9 135.5 420.5 139.7 414.7 C 142.5 411.1 138.7 407.1 138.0 403.4 C 135.9 388.2 136.8 372.8 137.6 357.5 C 141.1 336.9 145.2 316.5 149.1 295.9 Z" />
+        
+        <!-- Eastern Province -->
+        <path id="province-path-7" onclick="openProvince(7)" class="province-path" fill="#126e0c" d="M 348.6 212.1 C 356.6 208.2 365.7 208.5 374.2 206.7 C 378.2 210.9 384.1 209.0 388.3 206.2 C 393.8 209.7 399.6 213.1 403.3 218.7 C 415.5 234.2 428.9 248.8 439.7 265.3 C 444.8 272.6 446.4 281.4 448.3 289.9 C 449.1 292.5 446.3 294.0 444.8 295.7 C 443.8 292.9 442.8 290.1 441.7 287.2 C 433.5 291.0 424.4 295.6 421.3 304.8 C 432.0 309.1 443.0 314.2 454.7 313.8 C 457.1 311.2 457.9 307.5 459.8 304.6 C 461.5 302.8 463.7 301.6 465.8 300.3 C 470.1 304.9 473.0 310.6 474.3 316.8 C 478.6 333.8 482.1 351.0 484.8 368.3 C 480.9 370.8 478.0 375.0 479.0 380.0 C 480.9 390.6 488.5 398.9 496.6 405.5 C 509.5 415.5 514.6 431.6 522.7 445.2 C 527.6 456.2 540.0 460.8 547.0 470.0 C 549.4 472.9 546.1 475.4 544.6 477.7 C 540.9 482.7 544.4 489.0 548.7 492.2 C 554.0 496.1 559.5 501.0 560.4 508.0 C 559.8 516.1 556.4 524.8 560.4 532.6 C 562.9 535.2 566.8 535.5 570.2 536.3 C 571.0 534.0 571.8 531.7 573.4 529.9 C 581.0 546.5 585.7 564.6 585.0 583.0 C 584.0 600.7 587.9 618.4 585.8 636.0 C 580.3 658.9 575.9 682.5 565.6 703.9 C 562.1 717.0 554.8 728.5 548.4 740.4 C 540.0 736.9 532.5 731.7 525.0 726.6 C 526.9 698.1 530.2 669.6 530.7 641.0 C 529.2 633.4 528.9 625.0 524.7 618.3 C 518.8 614.4 510.4 614.8 505.3 609.7 C 502.4 601.9 503.9 593.6 502.4 585.6 C 499.4 568.3 495.5 551.0 495.2 533.3 C 487.0 535.7 479.5 540.1 473.0 545.7 C 472.7 549.7 472.8 554.0 470.5 557.5 C 465.3 565.2 459.7 572.7 453.5 579.6 C 446.9 566.9 440.1 554.0 437.1 539.8 C 436.2 535.9 438.5 532.2 439.1 528.4 C 441.1 521.7 440.3 512.2 433.8 508.2 C 427.2 505.2 422.2 512.1 416.8 514.6 C 411.8 517.1 405.0 522.1 399.8 517.2 C 393.9 513.9 393.4 506.4 391.5 500.6 C 390.9 492.8 393.1 485.0 393.3 477.3 C 399.7 476.8 406.1 476.0 412.5 475.3 C 420.0 484.7 431.5 489.3 442.1 494.2 C 454.8 475.3 440.5 451.3 450.8 431.8 C 452.4 428.3 457.6 427.6 458.4 423.6 C 461.0 402.0 462.0 380.2 461.8 358.4 C 439.8 357.5 417.4 357.6 395.8 352.1 C 387.6 348.1 379.5 341.1 377.6 331.8 C 379.8 322.7 391.4 317.4 389.9 307.1 C 386.5 295.8 378.8 286.6 374.0 276.1 C 371.6 266.4 370.1 256.6 368.8 246.8 C 369.3 240.8 373.6 235.9 374.8 230.0 C 370.5 219.5 358.8 215.1 348.6 212.1 Z" />
+        
+        <!-- Central Province -->
+        <path id="province-path-1" onclick="openProvince(1)" class="province-path" fill="#82db6f" d="M 322.0 426.0 C 327.3 421.0 333.8 417.6 340.0 413.8 C 345.1 418.4 351.3 422.0 355.5 427.4 C 355.8 431.3 353.8 434.9 352.5 438.4 C 346.5 452.7 338.8 467.4 341.6 483.4 C 346.3 484.2 351.2 484.7 356.0 485.0 C 361.3 484.8 365.6 481.6 369.9 478.9 C 376.4 474.2 384.9 476.7 392.2 477.1 C 392.4 491.6 387.1 505.5 388.1 520.0 C 388.2 535.0 390.3 549.9 391.4 564.9 C 390.6 575.8 387.8 586.5 386.6 597.5 C 384.8 611.2 382.5 625.6 374.1 637.0 C 369.9 639.4 364.6 639.3 360.3 641.4 C 356.8 645.5 352.5 649.7 351.6 655.3 C 352.0 659.4 355.0 662.8 355.5 666.9 C 355.2 671.4 353.7 675.7 352.9 680.1 C 334.3 691.3 311.1 688.3 291.1 682.9 C 289.0 682.3 287.2 680.8 286.3 678.9 C 281.7 671.5 277.8 663.8 273.9 656.0 C 269.3 647.7 270.0 637.0 274.9 628.9 C 280.6 618.6 284.1 606.2 294.2 599.1 C 292.3 581.8 280.8 567.8 269.1 555.7 C 272.1 555.6 275.2 555.6 277.7 553.7 C 286.1 547.6 293.8 540.4 300.0 532.1 C 302.8 512.0 298.4 491.6 291.0 472.9 C 288.5 467.0 287.9 460.6 286.9 454.3 C 294.4 451.2 302.9 448.8 307.9 441.9 C 312.6 436.6 316.8 430.9 322.0 426.0 Z" />
+        
+        <!-- Western Province -->
+        <path id="province-path-3" onclick="openProvince(3)" class="province-path" fill="#25D366" d="M 142.0 573.9 C 163.6 569.3 185.4 566.3 207.2 562.7 C 211.0 566.6 214.6 570.7 218.2 574.9 C 213.6 581.7 206.5 588.1 207.2 597.0 C 207.4 618.0 211.2 638.7 213.3 659.5 C 214.5 669.0 212.4 679.3 216.3 688.4 C 218.6 695.2 221.3 701.8 225.1 707.9 C 235.7 724.6 246.5 741.2 256.7 758.2 C 249.1 760.2 242.8 765.0 236.1 768.9 C 225.5 771.7 213.6 776.5 203.0 771.0 C 194.1 766.4 184.8 762.6 176.0 758.0 C 174.2 757.1 174.0 755.0 173.7 753.4 C 172.4 745.3 171.7 737.0 168.8 729.3 C 163.4 714.9 157.4 700.9 151.1 686.9 C 146.0 675.3 144.0 662.6 142.6 650.1 C 142.1 646.1 144.6 642.6 145.6 639.0 C 150.8 617.2 139.0 595.7 142.0 573.9 Z" />
+        
+        <!-- Sabaragamuwa -->
+        <path id="province-path-9" onclick="openProvince(9)" class="province-path" fill="#574500" d="M 253.7 547.7 C 256.3 548.3 259.9 547.8 262.1 549.8 C 275.1 563.8 289.4 578.6 293.1 598.1 C 285.5 603.4 281.9 612.0 277.9 619.9 C 274.1 627.9 268.7 635.7 269.9 645.0 C 269.2 650.1 271.9 654.6 273.9 659.1 C 277.5 666.1 280.9 673.2 285.0 680.0 C 287.6 684.4 293.3 684.6 297.6 685.6 C 315.5 689.3 335.2 691.1 351.9 682.3 C 352.7 690.9 354.1 699.5 355.9 707.9 C 358.9 708.4 361.9 708.8 364.9 709.3 C 365.1 714.2 366.0 719.0 365.7 723.9 C 364.0 730.9 359.6 736.8 357.8 743.7 C 357.2 753.7 358.2 764.9 365.1 772.8 C 369.8 779.7 375.9 785.4 381.2 791.8 C 383.8 794.7 383.7 798.8 382.5 802.3 C 363.5 796.6 343.5 792.9 326.1 782.8 C 318.9 779.2 317.4 770.4 311.6 765.4 C 303.9 765.4 296.3 767.1 289.4 770.0 C 281.3 770.5 273.5 766.9 266.1 763.8 C 260.6 761.9 257.5 757.0 254.6 752.4 C 245.4 736.8 235.4 721.6 225.7 706.3 C 219.9 695.8 214.7 684.3 215.2 672.0 C 215.0 648.2 209.2 624.8 208.2 600.9 C 206.2 590.8 213.9 582.8 219.4 575.4 C 230.6 566.0 245.4 560.3 253.7 547.7 Z" />
+        
+        <!-- Uva Province -->
+        <path id="province-path-8" onclick="openProvince(8)" class="province-path" fill="#69c057" d="M 390.3 540.0 C 389.7 527.3 387.8 514.3 390.2 501.7 C 392.1 509.4 395.1 519.1 404.1 520.7 C 413.7 519.9 421.3 512.9 429.2 508.3 C 436.3 508.3 439.3 517.1 438.9 523.0 C 438.9 528.4 435.5 533.2 435.5 538.6 C 438.7 553.9 445.8 568.0 453.2 581.6 C 460.4 574.5 466.3 566.3 471.9 557.9 C 473.9 554.7 473.6 550.7 473.5 547.1 C 479.8 541.9 486.6 537.4 494.4 534.8 C 493.5 559.0 503.0 582.0 503.1 606.0 C 503.5 617.4 518.8 613.5 524.6 620.3 C 528.0 630.0 530.4 640.1 529.6 650.4 C 527.9 676.2 526.4 702.0 523.7 727.7 C 518.1 730.0 512.4 732.0 507.4 735.4 C 498.4 742.0 494.5 753.1 486.8 760.8 C 473.2 766.8 458.5 769.9 443.9 772.6 C 439.1 771.5 436.2 766.4 431.6 764.5 C 424.9 762.0 417.8 759.7 410.6 760.5 C 404.8 762.0 399.9 765.7 395.1 769.2 C 395.8 771.5 396.6 773.8 397.3 776.1 C 391.3 780.4 384.9 784.0 378.4 787.3 C 373.7 781.1 368.3 775.5 364.1 768.9 C 359.9 763.6 359.7 756.4 358.7 750.0 C 357.4 743.5 362.0 737.9 364.1 732.1 C 368.2 724.8 366.5 716.2 366.0 708.4 C 362.9 707.9 359.9 707.6 356.8 707.1 C 355.6 700.2 354.1 693.3 353.7 686.3 C 353.1 677.8 358.3 669.4 355.0 661.0 C 354.4 658.2 352.1 654.9 354.0 652.1 C 356.4 648.6 358.3 644.4 361.9 642.0 C 366.1 640.5 370.6 639.7 375.0 638.7 C 379.4 630.3 384.6 621.9 385.3 612.2 C 387.2 597.4 389.9 582.8 392.2 568.1 C 393.8 558.7 390.6 549.4 390.3 540.0 Z" />
+        
+        <!-- Southern Province -->
+        <path id="province-path-2" onclick="openProvince(2)" class="province-path" fill="#e9c349" d="M 507.7 736.8 C 513.2 733.0 519.5 730.9 525.6 728.4 C 532.5 733.3 539.8 737.9 547.4 741.7 C 542.4 749.5 536.0 756.2 528.2 761.2 C 509.8 774.0 492.5 788.3 474.1 801.1 C 458.3 812.6 438.6 815.6 420.9 822.9 C 407.6 828.6 392.6 828.6 379.3 834.4 C 369.7 838.7 358.6 839.4 350.1 846.1 C 342.0 852.9 333.1 858.8 323.0 862.0 C 316.4 863.9 310.2 867.7 303.3 868.4 C 281.2 864.6 259.3 858.9 237.9 852.2 C 230.7 849.8 223.1 847.6 216.9 843.1 C 204.8 830.4 194.3 815.9 187.5 799.6 C 184.1 785.9 179.7 772.4 174.8 759.1 C 185.6 763.9 196.0 769.7 207.1 773.9 C 216.9 775.6 227.0 773.0 236.4 770.2 C 243.9 767.1 250.0 758.0 258.8 761.3 C 267.0 765.3 275.3 769.8 284.5 771.4 C 288.1 772.8 291.3 771.0 294.4 769.5 C 299.5 766.8 305.4 766.9 310.9 766.0 C 315.5 772.8 319.2 781.2 327.0 784.9 C 344.4 794.7 364.3 798.2 383.4 803.5 C 386.0 798.0 383.5 792.4 380.9 787.5 C 386.1 784.6 391.8 782.3 396.4 778.5 C 398.0 775.7 397.1 772.2 397.5 769.2 C 404.1 764.1 412.8 758.9 421.4 762.5 C 428.8 763.5 434.6 768.1 440.5 772.4 C 443.3 775.2 447.4 772.8 450.6 772.7 C 463.2 769.9 476.1 767.3 487.9 761.8 C 495.2 754.1 499.5 743.7 507.7 736.8 Z" />
+    </svg>
+</div>
+<div class="absolute bottom-6 left-6 right-6 p-4 bg-surface-container-highest/80 backdrop-blur-xl rounded-xl border border-outline-variant/10 pointer-events-none transition-transform group-hover:translate-y-2">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+        <p class="text-sm font-body font-medium">Hover & click a province to discover luxury itineraries.</p>
+    </div>
+</div>
+</div>
+<!-- Secondary Province List -->
+<div id="province-list-right" class="lg:col-span-3 grid grid-cols-1 gap-3 h-full">
+<!-- Dynamically Filled -->
+</div>
+</div>
+<script>
+    async function loadHomeContent() {
+        const settings = await fetch('/api/settings').then(res => res.json());
+        if (settings.home_description) {
+            document.getElementById('hero-description').textContent = settings.home_description;
+        }
+        if (settings.home_hero_image) {
+            document.querySelector('.hero-image').src = settings.home_hero_image;
+        }
+
+        const provinces = await fetch('/api/provinces').then(res => res.json());
+        const listLeft = document.getElementById('province-list-left');
+        const listRight = document.getElementById('province-list-right');
+        
+        listLeft.innerHTML = '';
+        listRight.innerHTML = '';
+        
+        provinces.forEach((p, index) => {
+            const card = document.createElement('div');
+            card.className = "group p-6 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all cursor-pointer border-l-4 border-transparent hover:border-primary active:scale-95";
+            
+            // Link card hover to map highlight
+            card.onmouseenter = () => {
+                const path = document.getElementById(`province-path-${p.id}`);
+                if (path) path.classList.add('active');
+            };
+            card.onmouseleave = () => {
+                const path = document.getElementById(`province-path-${p.id}`);
+                if (path) path.classList.remove('active');
+            };
+            
+            card.onclick = () => openProvince(p.id);
+            card.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <span class="text-xs font-label font-bold text-outline">${(index + 1).toString().padStart(2, '0')}</span>
+                    <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform">explore</span>
+                </div>
+                <h4 class="text-xl font-headline font-bold mt-2">${p.name}</h4>
+                <p class="text-xs text-on-surface-variant mt-1">${p.tagline || ''}</p>
+            `;
+            
+            if (index < 5) {
+                listLeft.appendChild(card);
+            } else {
+                listRight.appendChild(card);
+            }
+        });
+        if (settings.facebook_url) document.getElementById('footer-facebook').href = settings.facebook_url;
+        if (settings.instagram_url) document.getElementById('footer-instagram').href = settings.instagram_url;
+        if (settings.email_address) document.getElementById('footer-email').href = 'mailto:' + settings.email_address;
+    }
+    loadHomeContent();
+</script>
+</div>
+</section>
+<!-- Signature Experience Card -->
+<section class="py-12 px-8 md:px-20">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden relative min-h-[400px] flex items-center">
+<div class="absolute inset-0">
+<img alt="Luxury vintage car parked in front of a colonial estate in Sri Lanka" class="w-full h-full object-cover" data-alt="luxury classic car parked in front of a historic colonial mansion surrounded by lush tropical gardens and warm evening lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoxap56S7az1i_c2CFNFP9X9iMYeSgu0yPlur-Wx3BRhsFlxR0sFtrIA8AKyDPeB_W8J1BCqstwzq7jpk5uRwpQ_E01NDUb1l45hQEAvWPo9L-ckV7P9vXuADOS8BvD45PS0UgXXOsWYv_jLtJweT4kMvYdOWZGRvYzwkNruvVtckLRY4Ms0W85UkeM9ILV-asAYdli3Ihxe1mFYJlYP3qrRR2mpSx6EQpxCv4VPNhowExndBSiIn-FuHWpYcijfGvKdmVEnr01lY"/>
+<div class="absolute inset-0 bg-gradient-to-r from-[#131313] via-[#131313]/80 to-transparent"></div>
+</div>
+<div class="relative z-10 p-12 max-w-xl">
+<h3 class="text-4xl font-headline font-bold text-white mb-4">Travel in <span class="text-primary">Elegance</span></h3>
+<p class="text-on-surface-variant mb-8 text-lg leading-relaxed">Experience our premium fleet, from classic vintage rollers to modern executive SUVs, all manned by our professional concierge drivers.</p>
+<button onclick="window.location.href='about-us.html'" class="bg-white text-[#131313] font-headline font-extrabold px-8 py-4 rounded-xl hover:bg-primary transition-all">Explore the Fleet</button>
+</div>
+</div>
+</section>
+</main>
+<!-- WhatsApp Persistent Button -->
+<a class="fixed bottom-10 right-10 z-[60] group persistent-whatsapp" href="https://wa.me/" target="_blank">
+<div class="absolute inset-0 bg-[#25D366] rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="relative flex items-center gap-3 bg-surface-container-high px-6 py-4 rounded-full border border-outline-variant/20 shadow-2xl hover:scale-105 transition-transform">
+<div class="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center">
+<svg class="w-6 h-6 text-white" fill="currentColor" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.222-3.665c1.52.888 3.012 1.352 4.67 1.353 5.51 0 9.993-4.483 9.996-9.994.001-2.67-1.04-5.18-2.93-7.071-1.89-1.89-4.404-2.931-7.074-2.932-5.513 0-9.997 4.484-10.001 9.995-.001 1.776.471 3.434 1.365 4.887l-1.087 3.967 4.061-1.065zm10.748-7.447c-.244-.122-1.443-.712-1.667-.793-.223-.082-.387-.122-.55.122-.163.244-.632.793-.775.957-.142.163-.285.183-.528.061-.244-.122-1.029-.379-1.96-1.21-.724-.647-1.213-1.446-1.355-1.69-.142-.244-.015-.376.107-.497.11-.109.244-.285.366-.427.122-.142.163-.244.244-.407.082-.163.041-.305-.021-.427-.062-.122-.55-1.322-.753-1.811-.198-.477-.399-.413-.55-.421l-.468-.009c-.163 0-.428.061-.652.305-.224.244-.855.835-.855 2.035 0 1.2.876 2.361.998 2.524.122.163 1.722 2.631 4.172 3.691.583.252 1.038.402 1.393.515.586.186 1.119.16 1.541.097.471-.071 1.443-.589 1.647-1.159.204-.57.204-1.058.143-1.159-.061-.101-.224-.162-.468-.284z"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-label font-bold text-outline tracking-widest uppercase">Travel Concierge</span>
+<span class="text-white font-headline font-bold">Chat with us</span>
+</div>
+</div>
+</a>
+<!-- Footer -->
+<footer class="bg-[#131313] w-full py-12 border-t border-[#404941]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start">
+<h2 class="text-lg font-bold text-[#82db6f]">Discover Ceylon</h2>
+<p class="font-['Manrope'] text-sm tracking-wide text-gray-500 mt-2 text-center md:text-left">© 2024 Discover Ceylon Travel Concierge. All Rights Reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-['Manrope'] text-sm tracking-wide text-gray-500 hover:text-[#82db6f] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Manrope'] text-sm tracking-wide text-gray-500 hover:text-[#82db6f] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-sm tracking-wide text-gray-500 hover:text-[#82db6f] transition-colors" href="#">FAQ</a>
+</div>
+<div class="flex gap-6">
+    <a id="footer-facebook" href="#" class="text-gray-500 hover:text-primary transition-colors"><span class="material-symbols-outlined">share</span></a>
+    <a id="footer-instagram" href="#" class="text-gray-500 hover:text-primary transition-colors"><span class="material-symbols-outlined">camera_alt</span></a>
+    <a id="footer-email" href="#" class="text-gray-500 hover:text-primary transition-colors"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</footer>
+
+<script>(async () => {
+    const adminLink = document.getElementById('nav-admin-link');
+    const adminRes = await fetch('/api/admin/me').catch(() => null);
+    if (adminRes && adminRes.ok) {
+        const admin = await adminRes.json();
+        adminLink.textContent = 'Dashboard';
+        adminLink.href = 'admin-dashboard.html';
+        adminLink.classList.remove('hidden');
+        // Add logout button if not present
+        if (!document.getElementById('nav-logout-btn')) {
+            const logoutBtn = document.createElement('span');
+            logoutBtn.id = 'nav-logout-btn';
+            logoutBtn.className = 'text-primary font-bold text-sm cursor-pointer ml-4';
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.onclick = async () => {
+                await fetch('/api/admin/logout', { method: 'POST' });
+                window.location.reload();
+            };
+            adminLink.parentNode.appendChild(logoutBtn);
+        }
+    } else {
+        adminLink.classList.remove('hidden');
+    }
+})();</script>
+
+<!-- Review Regions Floating Button (hidden by default) -->
+<button id="btn-review-regions" onclick="openReviewModal()" class="fixed bottom-32 right-10 z-[60] bg-primary text-on-primary px-6 py-4 rounded-full font-headline font-bold shadow-[0_0_20px_rgba(130,219,111,0.4)] hover:scale-105 transition-transform flex items-center gap-3 hidden border border-white/20">
+    <span class="material-symbols-outlined">luggage</span>
+    <span id="review-region-count">0</span> Regions Selected
+</button>
+
+<!-- Review Modal -->
+<div id="review-regions-modal" class="fixed inset-0 z-[100] bg-background/80 backdrop-blur-sm items-center justify-center hidden">
+    <div class="bg-surface-container-low p-8 rounded-2xl w-[90%] max-w-md shadow-2xl border border-outline-variant/10 relative max-h-[90vh] overflow-y-auto">
+        <button onclick="closeReviewModal()" class="absolute top-4 right-4 text-outline hover:text-white transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <!-- Step 1: Review list -->
+        <div id="step-review">
+            <h3 class="text-2xl font-headline font-bold mb-2">Your Curated Journey</h3>
+            <p class="text-on-surface-variant text-sm mb-6">Review the beautiful places you've selected.</p>
+            <div id="selected-regions-list" class="space-y-4 mb-8 max-h-[35vh] overflow-y-auto pr-2"></div>
+            <div class="flex gap-4">
+                <button onclick="clearRegions()" class="flex-1 py-3 border border-error/50 text-error rounded-xl font-bold text-sm hover:bg-error/10 transition-colors">Clear All</button>
+                <button onclick="showBookingStep()" class="flex-[2] py-3 bg-primary text-on-primary rounded-xl font-bold hover:brightness-110 transition-colors">Proceed to Booking →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Name/Email + Download/Submit -->
+        <div id="step-booking" class="hidden">
+            <button onclick="document.getElementById('step-booking').classList.add('hidden'); document.getElementById('step-review').classList.remove('hidden');" class="text-outline text-sm mb-4 flex items-center gap-1 hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-sm">arrow_back</span> Back
+            </button>
+            <h3 class="text-2xl font-headline font-bold mb-2">Confirm Your Booking</h3>
+            <p class="text-on-surface-variant text-sm mb-6">Enter your details to receive a personalised itinerary PDF.</p>
+            <div class="space-y-4 mb-6">
+                <input id="booking-name" type="text" placeholder="Your Full Name" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl p-3 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary outline-none">
+                <input id="booking-email" type="email" placeholder="Your Email Address" class="w-full bg-surface-container-high border border-outline-variant/20 rounded-xl p-3 text-on-surface placeholder:text-outline focus:ring-1 focus:ring-primary outline-none">
+            </div>
+            <div class="flex gap-4">
+                <button onclick="submitBooking()" class="flex-[2] py-3 bg-primary text-on-primary rounded-xl font-bold hover:brightness-110 transition-colors flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+                    Download PDF & Submit
+                </button>
+            </div>
+            <p class="text-[10px] text-outline/60 text-center mt-3">Your itinerary details will be sent to our concierge team.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden printable PDF template -->
+<div id="pdf-template" class="hidden p-10 bg-white text-black font-sans" style="width:700px">
+    <div class="flex items-center gap-4 mb-8 border-b-2 border-green-600 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-green-700">Discover Ceylon</h1>
+            <p class="text-gray-500 text-sm">Curated Travel Concierge · Sri Lanka</p>
+        </div>
+    </div>
+    <h2 class="text-2xl font-bold mb-1 text-gray-800">Your Personalised Itinerary</h2>
+    <p id="pdf-date" class="text-gray-400 text-sm mb-8"></p>
+    <p id="pdf-name" class="text-gray-700 mb-6 text-base"></p>
+    <h3 class="text-lg font-bold text-green-700 uppercase tracking-wider mb-4">Selected Regions</h3>
+    <div id="pdf-regions" class="space-y-3 mb-10"></div>
+    <div class="border-t border-gray-200 pt-6 text-xs text-gray-400">
+        <p>This itinerary was generated by Discover Ceylon. Our team will contact you shortly to finalise your journey.</p>
+        <p class="mt-1">© 2024 Discover Ceylon Travel Concierge. All Rights Reserved.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+    function updateReviewButton() {
+        const regions = JSON.parse(localStorage.getItem('selectedRegions')) || [];
+        const btn = document.getElementById('btn-review-regions');
+        if (regions.length > 0) {
+            btn.classList.remove('hidden');
+            document.getElementById('review-region-count').textContent = regions.length;
+        } else {
+            btn.classList.add('hidden');
+        }
+    }
+
+    function openReviewModal() {
+        const regions = JSON.parse(localStorage.getItem('selectedRegions')) || [];
+        const listContainer = document.getElementById('selected-regions-list');
+        listContainer.innerHTML = '';
+        document.getElementById('step-review').classList.remove('hidden');
+        document.getElementById('step-booking').classList.add('hidden');
+
+        if (regions.length === 0) {
+            listContainer.innerHTML = '<p class="text-outline text-center py-4">No regions selected yet.</p>';
+        } else {
+            regions.forEach(r => {
+                listContainer.innerHTML += `
+                    <div class="flex justify-between items-center p-3 bg-surface-container-high rounded-lg">
+                        <div class="flex items-center gap-3">
+                            <img src="${r.imageUrl}" class="w-10 h-10 rounded-md object-cover">
+                            <span class="font-bold text-sm">${r.name}</span>
+                        </div>
+                        <button onclick="removeRegion('${r.id}')" class="text-error hover:text-error/70"><span class="material-symbols-outlined text-sm">delete</span></button>
+                    </div>`;
+            });
+        }
+
+        const modal = document.getElementById('review-regions-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeReviewModal() {
+        const modal = document.getElementById('review-regions-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    function removeRegion(id) {
+        let regions = JSON.parse(localStorage.getItem('selectedRegions')) || [];
+        regions = regions.filter(r => String(r.id) !== String(id));
+        localStorage.setItem('selectedRegions', JSON.stringify(regions));
+        openReviewModal();
+        updateReviewButton();
+    }
+
+    function clearRegions() {
+        localStorage.removeItem('selectedRegions');
+        closeReviewModal();
+        updateReviewButton();
+    }
+
+    function showBookingStep() {
+        const regions = JSON.parse(localStorage.getItem('selectedRegions')) || [];
+        if (regions.length === 0) return;
+        document.getElementById('step-review').classList.add('hidden');
+        document.getElementById('step-booking').classList.remove('hidden');
+    }
+
+    async function submitBooking() {
+        const name = document.getElementById('booking-name').value.trim() || 'Valued Guest';
+        const email = document.getElementById('booking-email').value.trim();
+        const regions = JSON.parse(localStorage.getItem('selectedRegions')) || [];
+        if (regions.length === 0) return;
+
+        const regionNames = regions.map(r => r.name).join(', ');
+
+        // 1. Build and download the PDF
+        const pdfTemplate = document.getElementById('pdf-template');
+        document.getElementById('pdf-date').textContent = 'Generated: ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        document.getElementById('pdf-name').textContent = `Dear ${name}, here are the regions you have curated for your upcoming visit to Sri Lanka:`;
+        const regionsHtml = regions.map((r, i) => `
+            <div style="display:flex;align-items:center;gap:12px;padding:12px;background:#f0fdf4;border-radius:8px;border-left:3px solid #16a34a">
+                <span style="font-weight:bold;color:#15803d;font-size:1.1rem">${i + 1}.</span>
+                <span style="font-weight:600;color:#1f2937">${r.name}</span>
+            </div>`).join('');
+        document.getElementById('pdf-regions').innerHTML = regionsHtml;
+
+        pdfTemplate.classList.remove('hidden');
+        await html2pdf().set({
+            margin: 0,
+            filename: 'Discover_Ceylon_Itinerary.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'px', format: [700, 990], orientation: 'portrait' }
+        }).from(pdfTemplate).save();
+        pdfTemplate.classList.add('hidden');
+
+        // 2. Notify admin via API
+        await fetch('/api/inquiries', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, regions: regionNames })
+        });
+
+        // 3. Clean up and close
+        localStorage.removeItem('selectedRegions');
+        closeReviewModal();
+        updateReviewButton();
+        alert(`Thank you, ${name}! Your itinerary PDF has been downloaded and our team has been notified.`);
+    }
+
+    document.addEventListener('DOMContentLoaded', updateReviewButton);
+</script>
+</body></html>
