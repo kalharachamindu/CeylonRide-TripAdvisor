@@ -1,16 +1,11 @@
-const sqlite3 = require('sqlite3').verbose();
+const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
 
 // Connect to SQLite database
 const dbPath = path.resolve(__dirname, 'ceylon.db');
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        console.error('Error connecting to SQLite database:', err.message);
-    } else {
-        console.log('Connected to local SQLite database.');
-    }
-});
+const db = new Database(dbPath);
+console.log('Connected to local SQLite database via better-sqlite3.');
 
 // Helper function to handle PostgreSQL-style $1, $2 placeholders for SQLite
 const convertPlaceholders = (text) => {
@@ -21,45 +16,78 @@ const convertPlaceholders = (text) => {
 
 // Wrap db methods to ensure compatibility with the rest of the app
 const dbWrapper = {
-    query: (text, params) => {
+    query: (text, params = []) => {
         return new Promise((resolve, reject) => {
-            db.all(convertPlaceholders(text), params, (err, rows) => {
-                if (err) reject(err);
-                else resolve({ rows });
-            });
+            try {
+                const rows = db.prepare(convertPlaceholders(text)).all(params);
+                resolve({ rows });
+            } catch (err) {
+                reject(err);
+            }
         });
     },
 
-    all: (text, params, callback) => {
-        db.all(convertPlaceholders(text), params, callback);
+    all: (text, params = [], callback) => {
+        try {
+            const rows = db.prepare(convertPlaceholders(text)).all(params);
+            if (callback) callback(null, rows);
+        } catch (err) {
+            if (callback) callback(err);
+        }
     },
 
-    get: (text, params, callback) => {
-        db.get(convertPlaceholders(text), params, callback);
+    get: (text, params = [], callback) => {
+        try {
+            const row = db.prepare(convertPlaceholders(text)).get(params);
+            if (callback) callback(null, row);
+        } catch (err) {
+            if (callback) callback(err);
+        }
     },
 
-    run: (text, params, callback) => {
-        db.run(convertPlaceholders(text), params, callback);
+    run: function(text, params = [], callback) {
+        try {
+            const stmt = db.prepare(convertPlaceholders(text));
+            const info = stmt.run(params);
+            const context = { lastID: info.lastInsertRowid, changes: info.changes };
+            if (callback) callback.call(context, null);
+        } catch (err) {
+            if (callback) callback(err);
+        }
     },
 
     prepare: (text) => {
-        return db.prepare(convertPlaceholders(text));
+        const stmt = db.prepare(convertPlaceholders(text));
+        return {
+            run: function(params, callback) {
+                try {
+                    const info = stmt.run(params);
+                    const context = { lastID: info.lastInsertRowid, changes: info.changes };
+                    if (callback) callback.call(context, null);
+                } catch (err) {
+                    if (callback) callback(err);
+                }
+            },
+            finalize: (callback) => {
+                if (callback) callback();
+            }
+        };
     },
 
-    serialize: (fn) => db.serialize(fn)
+    serialize: (fn) => fn()
 };
 
-async function initDb() {
-    db.serialize(() => {
+function initDb() {
+    dbWrapper.serialize(() => {
         // Site Settings Table
-        db.run(`CREATE TABLE IF NOT EXISTS site_settings (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS site_settings (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             key TEXT UNIQUE,
             value TEXT
         )`);
 
         // Provinces Table
-        db.run(`CREATE TABLE IF NOT EXISTS provinces (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS provinces (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             tagline TEXT,
@@ -71,7 +99,7 @@ async function initDb() {
         )`);
 
         // Tourist Spots Table
-        db.run(`CREATE TABLE IF NOT EXISTS spots (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS spots (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             province_id INTEGER,
             name TEXT,
@@ -83,7 +111,7 @@ async function initDb() {
         )`);
 
         // Hotels Table
-        db.run(`CREATE TABLE IF NOT EXISTS hotels (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS hotels (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             province_id INTEGER,
             name TEXT,
@@ -94,7 +122,7 @@ async function initDb() {
         )`);
 
         // Vehicles Table
-        db.run(`CREATE TABLE IF NOT EXISTS vehicles (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS vehicles (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             rate TEXT,
@@ -103,14 +131,14 @@ async function initDb() {
         )`);
 
         // Admin Table
-        db.run(`CREATE TABLE IF NOT EXISTS admins (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS admins (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE,
             password TEXT
         )`);
 
         // Inquiries Table
-        db.run(`CREATE TABLE IF NOT EXISTS inquiries (
+        dbWrapper.run(`CREATE TABLE IF NOT EXISTS inquiries (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             email TEXT,
@@ -120,7 +148,7 @@ async function initDb() {
         )`);
 
         // Seed Default Admin
-        db.run(`INSERT OR IGNORE INTO admins (username, password) VALUES (?, ?)`, ['DAHAM vishwa', 'DVB@2003']);
+        dbWrapper.run(`INSERT OR IGNORE INTO admins (username, password) VALUES (?, ?)`, ['DAHAM vishwa', 'DVB@2003']);
 
         // Seed default settings
         const defaultSettings = [
@@ -135,7 +163,7 @@ async function initDb() {
         ];
 
         defaultSettings.forEach(([key, value]) => {
-            db.run(`INSERT OR IGNORE INTO site_settings (key, value) VALUES (?, ?)`, [key, value]);
+            dbWrapper.run(`INSERT OR IGNORE INTO site_settings (key, value) VALUES (?, ?)`, [key, value]);
         });
 
         console.log('Database tables verified/created.');
@@ -145,3 +173,4 @@ async function initDb() {
 initDb();
 
 module.exports = dbWrapper;
+
